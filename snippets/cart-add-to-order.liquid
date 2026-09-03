@@ -1,0 +1,319 @@
+{% comment %}
+  Renders the "Tu compra incluye" list, the "add to order" cross-sell cards
+  and the savings badge for the cart. Shared between the cart drawer and the
+  /cart page so both look and behave the same way.
+
+  Accepts:
+  - id_prefix: {String} Keeps element/form ids unique when this snippet is
+    rendered more than once on the same document (e.g. the drawer and the
+    cart page both render on /cart).
+
+  Usage:
+  {% render 'cart-add-to-order', id_prefix: 'CartDrawer' %}
+{% endcomment %}
+
+<style>
+  .cart-drawer__add-to-order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .cart-drawer__add-to-order-item {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    grid-template-areas:
+      'media info'
+      'button button';
+    column-gap: 1.2rem;
+    row-gap: 1rem;
+    align-items: start;
+    padding: 1.2rem;
+    border: 0.1rem solid rgba(var(--color-foreground), 0.12);
+    border-radius: 0.8rem;
+  }
+
+  .cart-drawer__add-to-order-media {
+    grid-area: media;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: rgba(var(--color-foreground), 0.06);
+  }
+
+  .cart-drawer__add-to-order-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cart-drawer__add-to-order-info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .cart-drawer__add-to-order-title {
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 1.3;
+    color: rgb(var(--color-foreground));
+    text-decoration: none;
+  }
+
+  .cart-drawer__add-to-order-price .price-item {
+    font-size: 1.3rem;
+  }
+
+  .cart-drawer__add-to-order-price .price-item--regular {
+    color: rgba(var(--color-foreground), 0.75);
+  }
+
+  .cart-drawer__add-to-order-action {
+    grid-area: button;
+  }
+
+  .cart-drawer__add-to-order-form {
+    margin: 0;
+  }
+
+  .cart-drawer__add-to-order-submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.9rem 1.4rem;
+    border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+    border-radius: 0.5rem;
+    background: #f5c6a2;
+    color: rgb(var(--color-foreground));
+    font: inherit;
+    font-size: 1.4rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--duration-short) ease;
+  }
+
+  .cart-drawer__add-to-order-submit:hover {
+    background: #f0b78c;
+  }
+
+  .cart-drawer__add-to-order-submit[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: rgba(var(--color-foreground), 0.06);
+    border-color: rgba(var(--color-foreground), 0.08);
+  }
+
+  .cart-drawer__add-to-order-submit .icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .cart-drawer__add-to-order-submit .icon-wrap svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .cart-drawer__add-to-order-submit .sold-out-message.hidden,
+  .cart-drawer__add-to-order-submit .loading__spinner.hidden {
+    display: none;
+  }
+
+  .cart-drawer__savings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0.6rem 0 0;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.8rem;
+    background: #f5c6a2;
+    animation: cart-drawer-savings-pop 0.35s ease-out;
+  }
+
+  .cart-drawer__savings-label {
+    font-weight: 600;
+    color: rgb(var(--color-foreground));
+    font-size: 1.4rem;
+  }
+
+  .cart-drawer__savings-value {
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  @keyframes cart-drawer-savings-pop {
+    0% {
+      transform: scale(0.92);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+
+{%- if cart != empty -%}
+  <div class="cart-drawer__includes">
+    <h3 class="cart-drawer__includes-title">{{ 'sections.cart.includes.title' | t }}</h3>
+    <ul class="cart-drawer__includes-list list-unstyled" role="list">
+      <li class="cart-drawer__includes-item">
+        <span class="svg-wrapper">{{- 'icon-checkmark.svg' | inline_asset_content -}}</span>
+        {{ 'sections.cart.includes.item_1' | t }}
+      </li>
+      <li class="cart-drawer__includes-item">
+        <span class="svg-wrapper">{{- 'icon-checkmark.svg' | inline_asset_content -}}</span>
+        {{ 'sections.cart.includes.item_2' | t }}
+      </li>
+      <li class="cart-drawer__includes-item">
+        <span class="svg-wrapper">{{- 'icon-checkmark.svg' | inline_asset_content -}}</span>
+        {{ 'sections.cart.includes.item_3' | t }}
+      </li>
+    </ul>
+  </div>
+
+  {%- liquid
+    assign add_to_order_pool = collections.all.products
+    assign add_to_order_pool_size = add_to_order_pool.size
+    assign add_to_order_max = 6
+    assign add_to_order_shown = 0
+  -%}
+  {%- comment -%}
+    First pass: only count how many candidates would be shown.
+    The `form` tag is not reliable inside a `capture` block (Shopify's
+    Liquid loses track of the form context there), so the markup
+    itself is built in a second, uncaptured pass below.
+  {%- endcomment -%}
+  {%- if add_to_order_pool_size > 0 -%}
+    {%- liquid
+      assign add_to_order_pool_last = add_to_order_pool_size | minus: 1
+      assign random_seed = "now" | date: "%H%M%S" | modulo: add_to_order_pool_size
+    -%}
+    {%- for i in (0..add_to_order_pool_last) -%}
+      {%- if add_to_order_shown >= add_to_order_max -%}
+        {%- break -%}
+      {%- endif -%}
+      {%- assign product_index = i | plus: random_seed | modulo: add_to_order_pool_size -%}
+      {%- assign candidate = add_to_order_pool[product_index] -%}
+      {%- assign candidate_in_cart = false -%}
+      {%- for item in cart.items -%}
+        {%- if item.product.id == candidate.id -%}
+          {%- assign candidate_in_cart = true -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- unless candidate_in_cart -%}
+        {%- assign add_to_order_shown = add_to_order_shown | plus: 1 -%}
+      {%- endunless -%}
+    {%- endfor -%}
+  {%- endif -%}
+  {%- if add_to_order_shown > 0 -%}
+    <div class="complementary-products cart-drawer__add-to-order">
+      <div class="complementary-products__container">
+        <div class="summary__title">
+          <h3 class="h4">{{ 'sections.cart.add_to_order.title' | t }}</h3>
+        </div>
+        <ul class="cart-drawer__add-to-order-list list-unstyled" role="list">
+          {%- assign add_to_order_rendered = 0 -%}
+          {%- for i in (0..add_to_order_pool_last) -%}
+            {%- if add_to_order_rendered >= add_to_order_max -%}
+              {%- break -%}
+            {%- endif -%}
+            {%- assign product_index = i | plus: random_seed | modulo: add_to_order_pool_size -%}
+            {%- assign candidate = add_to_order_pool[product_index] -%}
+            {%- assign candidate_in_cart = false -%}
+            {%- for item in cart.items -%}
+              {%- if item.product.id == candidate.id -%}
+                {%- assign candidate_in_cart = true -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {%- unless candidate_in_cart -%}
+              {%- assign add_to_order_rendered = add_to_order_rendered | plus: 1 -%}
+              {%- assign candidate_variant = candidate.selected_or_first_available_variant -%}
+              {%- assign add_to_order_form_id = id_prefix | append: '-AddToOrder-' | append: add_to_order_rendered -%}
+              <li
+                id="{{ id_prefix }}-AddToOrder-{{ add_to_order_rendered }}"
+                class="cart-drawer__add-to-order-item"
+              >
+                <a
+                  href="{{ candidate.url }}"
+                  class="cart-drawer__add-to-order-media"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  {%- if candidate.featured_media -%}
+                    <img
+                      src="{{ candidate.featured_media | image_url: width: 200 }}"
+                      alt="{{ candidate.featured_media.alt | escape }}"
+                      loading="lazy"
+                      width="100"
+                      height="100"
+                    >
+                  {%- endif -%}
+                </a>
+                <div class="cart-drawer__add-to-order-info">
+                  <a href="{{ candidate.url }}" class="cart-drawer__add-to-order-title">
+                    {{- candidate.title | escape -}}
+                  </a>
+                  {% render 'price', product: candidate, price_class: 'cart-drawer__add-to-order-price', show_compare_at_price: true %}
+                </div>
+                <div class="cart-drawer__add-to-order-action">
+                  <product-form>
+                    {%- form 'product',
+                      candidate,
+                      id: add_to_order_form_id,
+                      class: 'cart-drawer__add-to-order-form'
+                    -%}
+                      <input
+                        type="hidden"
+                        name="id"
+                        value="{{ candidate_variant.id }}"
+                        class="product-variant-id"
+                        {% unless candidate_variant.available %}
+                          disabled
+                        {% endunless %}
+                      >
+                      <button
+                        type="submit"
+                        name="add"
+                        class="cart-drawer__add-to-order-submit"
+                        data-sold-out-message="true"
+                        {% unless candidate_variant.available %}
+                          disabled
+                        {% endunless %}
+                      >
+                        <span>
+                          {%- if candidate_variant.available -%}
+                            {{ 'products.product.add_to_cart' | t }}
+                          {%- else -%}
+                            {{ 'products.product.sold_out' | t }}
+                          {%- endif -%}
+                        </span>
+                        <span class="sold-out-message hidden">{{ 'products.product.sold_out' | t }}</span>
+                        <span class="icon-wrap">
+                          {{- 'icon-plus.svg' | inline_asset_content -}}
+                        </span>
+                        {%- render 'loading-spinner' -%}
+                      </button>
+                    {%- endform -%}
+                  </product-form>
+                </div>
+              </li>
+            {%- endunless -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>{{ page_title }}</title>
+
+  {{ content_for_header }}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+  {%- comment -%}
+    Zodiak NO está en Google Fonts: es de Fontshare, por eso va aparte.
+    Pesos que existen en Zodiak: 100, 300, 400, 700, 800, 900. No hay 500 ni 600.
+  {%- endcomment -%}
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=zodiak@400,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+  {%- comment -%}
+    ALTERNATIVA MÁS RÁPIDA (recomendada cuando tengas tiempo):
+    servir Zodiak desde tu propio tema en vez de Fontshare. Sube
+    Zodiak-Regular.woff2 y Zodiak-Bold.woff2 a la carpeta "assets" del tema,
+    borra el <link> de Fontshare de arriba y descomenta esto:
+
+    <style>
+      @font-face{font-family:'Zodiak';src:url({{ 'Zodiak-Regular.woff2' | asset_url }}) format('woff2');
+        font-weight:400;font-style:normal;font-display:swap}
+      @font-face{font-family:'Zodiak';src:url({{ 'Zodiak-Bold.woff2' | asset_url }}) format('woff2');
+        font-weight:700;font-style:normal;font-display:swap}
+    </style>
+  {%- endcomment -%}
+
+  <style>
+    html, body { margin: 0; padding: 0; background: #FFFFFF; overscroll-behavior-y: none; }
+    img { max-width: 100%; height: auto; }
+    /* Por si el tema o alguna app intentan inyectar cabecera/pie en la landing */
+    #shopify-section-header, #shopify-section-footer,
+    .shopify-section-group-header-group,
+    .shopify-section-group-footer-group { display: none !important; }
+  </style>
+</head>
+<body>
+  {{ content_for_layout }}
+</body>
+</html>

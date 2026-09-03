@@ -8,36 +8,83 @@
  * ------------------------------------------------------------
  */
 {
+  "name": "t:sections.header.name",
   "type": "header",
-  "name": "t:general.header",
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "message-1": {
-          "type": "message",
+        "announcement-bar-0": {
+          "type": "announcement",
           "settings": {
-            "text": "Envíos a todo Colombia"
+            "text": "Envíos a todo Colombia",
+            "link": ""
           }
         },
-        "message-2": {
-          "type": "message",
+        "announcement_CA8YJT": {
+          "type": "announcement",
           "settings": {
-            "text": "Recibe regalos especiales"
+            "text": "Recibe regalos especiales",
+            "link": ""
           }
         }
       },
-      "block_order": ["message-1", "message-2"]
+      "block_order": [
+        "announcement-bar-0",
+        "announcement_CA8YJT"
+      ],
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "scheme-4",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
     },
     "header": {
       "type": "header",
       "settings": {
-        "menu": "main-menu"
+        "logo_position": "top-center",
+        "mobile_logo_position": "center",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": false,
+        "color_scheme": "scheme-3",
+        "menu_color_scheme": "scheme-3",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "1786724371f3ff2a13": {
+      "type": "apps",
+      "blocks": {
+        "uppromote_affiliate_customer_referral_landing_JMC4V9": {
+          "type": "shopify://apps/uppromote-affiliate/blocks/customer-referral-landing/64c32457-930d-4cb9-9641-e24c0d9cf1f4",
+          "settings": {
+            "section_corners": 0,
+            "section_top_margin": 20,
+            "section_bottom_margin": 20
+          }
+        }
+      },
+      "block_order": [
+        "uppromote_affiliate_customer_referral_landing_JMC4V9"
+      ],
+      "settings": {
+        "include_margins": true
       }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "1786724371f3ff2a13"
   ]
 }

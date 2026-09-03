@@ -1,0 +1,57 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_632310739389973426": {
+      "settings": {
+        "checksum": "e9a09f2671a89e30a86dd7156495e822511b3368e0e244b88c2bd3aa352c7b9e_1_1_1_0__1",
+        "gg1DabbIqCJ_text": "<p>Si no funciona, devolvemos tu dinero</p>",
+        "section_preload": "true"
+      },
+      "type": "gp-section-632310739389973426"
+    },
+    "gp_section_632310739390038962": {
+      "settings": {
+        "checksum": "3ccaf3b6ec9f9aafe311308ffdb5da620432f5436dc21d587d178a0637f9677a_1_1_1_0__1",
+        "gg7udiCVHbV_srcSet_desktop_src": "https://placehold.co/2160x2700?text=Image",
+        "gg7udiCVHbV_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0767/8292/8103/files/ChatGPT_Image_11_ago_2026_22_44_05.png",
+        "ggKf3P8B3Zj_label": "<p>Atención al cliente</p>",
+        "ggNKdbVbqK-_label": "<p>Quiero ser Distribuidor</p>",
+        "ggWHQMdMQRq_srcSet_desktop_src": "https://placehold.co/2160x2700?text=Image",
+        "ggWHQMdMQRq_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0767/8292/8103/files/ChatGPT_Image_11_ago_2026_22_44_19.png",
+        "ggb0xWtgMZH_label": "<p>Quiero Ser Creadora Serenna</p>",
+        "ggeyOwvmcxP_srcSet_desktop_src": "https://placehold.co/1080x1350?text=Image",
+        "ggeyOwvmcxP_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0767/8292/8103/files/ChatGPT_Image_11_ago_2026_22_43_57.png",
+        "section_preload": "true"
+      },
+      "type": "gp-section-632310739390038962"
+    },
+    "gp_section_632310739390104498": {
+      "settings": {
+        "checksum": "693c36a90dd5bd9feabb960a80d013bee20bb35783c76c5fa9e3bce22235a1bd_1_1_1_0__1",
+        "ggRB64brkQc_srcSet_desktop_src": "https://placehold.co/810x1013?text=Image",
+        "ggRB64brkQc_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_25.png?v=1786590161",
+        "ggaKSD3IJ6p_text": "<p>+15.000 clientas felices</p>",
+        "ggeoc5stnlA_text": "Recupera tu cabello en 45 días&nbsp;<br>o te devolvemos tu dinero",
+        "ggtyGuCkA2s_label": "<p><strong>INICIAR MI TRATAMIENTO</strong></p>",
+        "ggzdg68veZY_srcSet_desktop_src": "https://placehold.co/912x912?text=Image",
+        "ggzdg68veZY_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0767/8292/8103/files/767334123_18097713479232723_3073362333731811773_n.jpg",
+        "section_preload": "true"
+      },
+      "type": "gp-section-632310739390104498"
+    }
+  },
+  "order": [
+    "gp_section_632310739389973426",
+    "gp_section_632310739390104498",
+    "gp_section_632310739390038962"
+  ],
+  "layout": "theme.gempages.blank"
+}

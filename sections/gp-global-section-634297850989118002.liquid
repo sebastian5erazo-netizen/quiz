@@ -1,0 +1,734 @@
+
+    {% render 'gp-head', isThemeSection: true %}
+    
+    <style {% if section.settings.section_preload == "false" %} class="gps-link gps-style" type="text/disabled-css" {% endif %}>.gps-634297850989118002.gps.gpsil [style*="--ai:"]{align-items:var(--ai)}.gps-634297850989118002.gps.gpsil [style*="--as:"]{align-self:var(--as)}.gps-634297850989118002.gps.gpsil [style*="--aspect:"]{aspect-ratio:var(--aspect)}.gps-634297850989118002.gps.gpsil [style*="--bg:"]{background:var(--bg)}.gps-634297850989118002.gps.gpsil [style*="--hvr-bg:"]:hover{background:var(--hvr-bg)}.gps-634297850989118002.gps.gpsil [style*="--bga:"]{background-attachment:var(--bga)}.gps-634297850989118002.gps.gpsil [style*="--bgc:"]{background-color:var(--bgc)}.gps-634297850989118002.gps.gpsil [style*="--bgi:"]{background-image:var(--bgi)}.gps-634297850989118002.gps.gpsil [style*="--bgp:"]{background-position:var(--bgp)}.gps-634297850989118002.gps.gpsil [style*="--bgr:"]{background-repeat:var(--bgr)}.gps-634297850989118002.gps.gpsil [style*="--bgs:"]{background-size:var(--bgs)}.gps-634297850989118002.gps.gpsil [style*="--b:"]{border:var(--b)}.gps-634297850989118002.gps.gpsil [style*="--hvr-b:"]:hover{border:var(--hvr-b)}.gps-634297850989118002.gps.gpsil [style*="--focus-b:"]:focus{border:var(--focus-b)}.gps-634297850989118002.gps.gpsil [style*="--bb:"]{border-bottom:var(--bb)}.gps-634297850989118002.gps.gpsil [style*="--hvr-bb:"]:hover{border-bottom:var(--hvr-bb)}.gps-634297850989118002.gps.gpsil [style*="--focus-bb:"]:focus{border-bottom:var(--focus-bb)}.gps-634297850989118002.gps.gpsil [style*="--bc:"]{border-color:var(--bc)}.gps-634297850989118002.gps.gpsil [style*="--hvr-bc:"]:hover{border-color:var(--hvr-bc)}.gps-634297850989118002.gps.gpsil [style*="--bblr:"]{border-bottom-left-radius:var(--bblr)}.gps-634297850989118002.gps.gpsil [style*="--hvr-bblr:"]:hover{border-bottom-left-radius:var(--hvr-bblr)}.gps-634297850989118002.gps.gpsil [style*="--focus-bblr:"]:focus{border-bottom-left-radius:var(--focus-bblr)}.gps-634297850989118002.gps.gpsil [style*="--bbrr:"]{border-bottom-right-radius:var(--bbrr)}.gps-634297850989118002.gps.gpsil [style*="--hvr-bbrr:"]:hover{border-bottom-right-radius:var(--hvr-bbrr)}.gps-634297850989118002.gps.gpsil [style*="--focus-bbrr:"]:focus{border-bottom-right-radius:var(--focus-bbrr)}.gps-634297850989118002.gps.gpsil [style*="--bl:"]{border-left:var(--bl)}.gps-634297850989118002.gps.gpsil [style*="--radius:"]{border-radius:var(--radius)}.gps-634297850989118002.gps.gpsil [style*="--bs:"]{border-style:var(--bs)}.gps-634297850989118002.gps.gpsil [style*="--hvr-bs:"]:hover{border-style:var(--hvr-bs)}.gps-634297850989118002.gps.gpsil [style*="--bt:"]{border-top:var(--bt)}.gps-634297850989118002.gps.gpsil [style*="--hvr-bt:"]:hover{border-top:var(--hvr-bt)}.gps-634297850989118002.gps.gpsil [style*="--focus-bt:"]:focus{border-top:var(--focus-bt)}.gps-634297850989118002.gps.gpsil [style*="--btlr:"]{border-top-left-radius:var(--btlr)}.gps-634297850989118002.gps.gpsil [style*="--hvr-btlr:"]:hover{border-top-left-radius:var(--hvr-btlr)}.gps-634297850989118002.gps.gpsil [style*="--focus-btlr:"]:focus{border-top-left-radius:var(--focus-btlr)}.gps-634297850989118002.gps.gpsil [style*="--btrr:"]{border-top-right-radius:var(--btrr)}.gps-634297850989118002.gps.gpsil [style*="--hvr-btrr:"]:hover{border-top-right-radius:var(--hvr-btrr)}.gps-634297850989118002.gps.gpsil [style*="--focus-btrr:"]:focus{border-top-right-radius:var(--focus-btrr)}.gps-634297850989118002.gps.gpsil [style*="--bw:"]{border-width:var(--bw)}.gps-634297850989118002.gps.gpsil [style*="--hvr-bw:"]:hover{border-width:var(--hvr-bw)}.gps-634297850989118002.gps.gpsil [style*="--bottom:"]{bottom:var(--bottom)}.gps-634297850989118002.gps.gpsil [style*="--shadow:"]{box-shadow:var(--shadow)}.gps-634297850989118002.gps.gpsil [style*="--c:"]{color:var(--c)}.gps-634297850989118002.gps.gpsil [style*="--hvr-c:"]:hover{color:var(--hvr-c)}.gps-634297850989118002.gps.gpsil [style*="--cg:"]{-moz-column-gap:var(--cg);column-gap:var(--cg)}.gps-634297850989118002.gps.gpsil [style*="--ff:"]{font-family:var(--ff)}.gps-634297850989118002.gps.gpsil [style*="--size:"]{font-size:var(--size)}.gps-634297850989118002.gps.gpsil [style*="--weight:"]{font-weight:var(--weight)}.gps-634297850989118002.gps.gpsil [style*="--fs:"]{font-style:var(--fs)}.gps-634297850989118002.gps.gpsil [style*="--gg:"]{grid-gap:var(--gg)}.gps-634297850989118002.gps.gpsil [style*="--gtc:"]{grid-template-columns:var(--gtc)}.gps-634297850989118002.gps.gpsil [style*="--h:"]{height:var(--h)}.gps-634297850989118002.gps.gpsil [style*="--jc:"]{justify-content:var(--jc)}.gps-634297850989118002.gps.gpsil [style*="--left:"]{left:var(--left)}.gps-634297850989118002.gps.gpsil [style*="--ls:"]{letter-spacing:var(--ls)}.gps-634297850989118002.gps.gpsil [style*="--lh:"]{line-height:var(--lh)}.gps-634297850989118002.gps.gpsil [style*="--tdt:"]{text-decoration-thickness:var(--tdt)}.gps-634297850989118002.gps.gpsil [style*="--tdc:"]{text-decoration-color:var(--tdc)}.gps-634297850989118002.gps.gpsil [style*="--tdl:"]{text-decoration-line:var(--tdl)}.gps-634297850989118002.gps.gpsil [style*="--m:"]{margin:var(--m)}.gps-634297850989118002.gps.gpsil [style*="--mb:"]{margin-bottom:var(--mb)}.gps-634297850989118002.gps.gpsil [style*="--ml:"]{margin-left:var(--ml)}.gps-634297850989118002.gps.gpsil [style*="--mr:"]{margin-right:var(--mr)}.gps-634297850989118002.gps.gpsil [style*="--mt:"]{margin-top:var(--mt)}.gps-634297850989118002.gps.gpsil [style*="--maxw:"]{max-width:var(--maxw)}.gps-634297850989118002.gps.gpsil [style*="--minw:"]{min-width:var(--minw)}.gps-634297850989118002.gps.gpsil [style*="--objf:"]{-o-object-fit:var(--objf);object-fit:var(--objf)}.gps-634297850989118002.gps.gpsil [style*="--op:"]{opacity:var(--op)}.gps-634297850989118002.gps.gpsil [style*="--o:"]{order:var(--o)}.gps-634297850989118002.gps.gpsil [style*="--of:"]{overflow:var(--of)}.gps-634297850989118002.gps.gpsil [style*="--pc:"]{place-content:var(--pc)}.gps-634297850989118002.gps.gpsil [style*="--p:"]{padding:var(--p)}.gps-634297850989118002.gps.gpsil [style*="--pb:"]{padding-bottom:var(--pb)}.gps-634297850989118002.gps.gpsil [style*="--pl:"]{padding-left:var(--pl)}.gps-634297850989118002.gps.gpsil [style*="--pr:"]{padding-right:var(--pr)}.gps-634297850989118002.gps.gpsil [style*="--pt:"]{padding-top:var(--pt)}.gps-634297850989118002.gps.gpsil [style*="--pos:"]{position:var(--pos)}.gps-634297850989118002.gps.gpsil [style*="--right:"]{right:var(--right)}.gps-634297850989118002.gps.gpsil [style*="--rg:"]{row-gap:var(--rg)}.gps-634297850989118002.gps.gpsil [style*="--ta:"]{text-align:var(--ta)}.gps-634297850989118002.gps.gpsil [style*="--ts:"]{text-shadow:var(--ts)}.gps-634297850989118002.gps.gpsil [style*="--tt:"]{text-transform:var(--tt)}.gps-634297850989118002.gps.gpsil [style*="--top:"]{top:var(--top)}.gps-634297850989118002.gps.gpsil [style*="--t:"]{transform:var(--t)}.gps-634297850989118002.gps.gpsil [style*="--v:"]{visibility:var(--v)}.gps-634297850989118002.gps.gpsil [style*="--ws:"]{white-space:var(--ws)}.gps-634297850989118002.gps.gpsil [style*="--w:"]{width:var(--w)}.gps-634297850989118002.gps.gpsil [style*="--z:"]{z-index:var(--z)}.gps-634297850989118002.gps.gpsil [style*="--line-clamp:"]{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:var(--line-clamp)}@media only screen and (max-width:1024px){.gps-634297850989118002.gps.gpsil [style*="--ai-tablet:"]{align-items:var(--ai-tablet)}.gps-634297850989118002.gps.gpsil [style*="--aspect-tablet:"]{aspect-ratio:var(--aspect-tablet)}.gps-634297850989118002.gps.gpsil [style*="--bg-tablet:"]{background:var(--bg-tablet)}.gps-634297850989118002.gps.gpsil [style*="--bgi-tablet:"]{background-image:var(--bgi-tablet)}.gps-634297850989118002.gps.gpsil [style*="--bblr-tablet:"]{border-bottom-left-radius:var(--bblr-tablet)}.gps-634297850989118002.gps.gpsil [style*="--bbrr-tablet:"]{border-bottom-right-radius:var(--bbrr-tablet)}.gps-634297850989118002.gps.gpsil [style*="--btlr-tablet:"]{border-top-left-radius:var(--btlr-tablet)}.gps-634297850989118002.gps.gpsil [style*="--btrr-tablet:"]{border-top-right-radius:var(--btrr-tablet)}.gps-634297850989118002.gps.gpsil [style*="--bottom-tablet:"]{bottom:var(--bottom-tablet)}.gps-634297850989118002.gps.gpsil [style*="--size-tablet:"]{font-size:var(--size-tablet)}.gps-634297850989118002.gps.gpsil [style*="--h-tablet:"]{height:var(--h-tablet)}.gps-634297850989118002.gps.gpsil [style*="--left-tablet:"]{left:var(--left-tablet)}.gps-634297850989118002.gps.gpsil [style*="--ls-tablet:"]{letter-spacing:var(--ls-tablet)}.gps-634297850989118002.gps.gpsil [style*="--lh-tablet:"]{line-height:var(--lh-tablet)}.gps-634297850989118002.gps.gpsil [style*="--mb-tablet:"]{margin-bottom:var(--mb-tablet)}.gps-634297850989118002.gps.gpsil [style*="--ml-tablet:"]{margin-left:var(--ml-tablet)}.gps-634297850989118002.gps.gpsil [style*="--mr-tablet:"]{margin-right:var(--mr-tablet)}.gps-634297850989118002.gps.gpsil [style*="--mt-tablet:"]{margin-top:var(--mt-tablet)}.gps-634297850989118002.gps.gpsil [style*="--maxw-tablet:"]{max-width:var(--maxw-tablet)}.gps-634297850989118002.gps.gpsil [style*="--minw-tablet:"]{min-width:var(--minw-tablet)}.gps-634297850989118002.gps.gpsil [style*="--op-tablet:"]{opacity:var(--op-tablet)}.gps-634297850989118002.gps.gpsil [style*="--of-tablet:"]{overflow:var(--of-tablet)}.gps-634297850989118002.gps.gpsil [style*="--pb-tablet:"]{padding-bottom:var(--pb-tablet)}.gps-634297850989118002.gps.gpsil [style*="--pl-tablet:"]{padding-left:var(--pl-tablet)}.gps-634297850989118002.gps.gpsil [style*="--pr-tablet:"]{padding-right:var(--pr-tablet)}.gps-634297850989118002.gps.gpsil [style*="--pt-tablet:"]{padding-top:var(--pt-tablet)}.gps-634297850989118002.gps.gpsil [style*="--pos-tablet:"]{position:var(--pos-tablet)}.gps-634297850989118002.gps.gpsil [style*="--right-tablet:"]{right:var(--right-tablet)}.gps-634297850989118002.gps.gpsil [style*="--rg-tablet:"]{row-gap:var(--rg-tablet)}.gps-634297850989118002.gps.gpsil [style*="--ta-tablet:"]{text-align:var(--ta-tablet)}.gps-634297850989118002.gps.gpsil [style*="--top-tablet:"]{top:var(--top-tablet)}.gps-634297850989118002.gps.gpsil [style*="--ws-tablet:"]{white-space:var(--ws-tablet)}.gps-634297850989118002.gps.gpsil [style*="--w-tablet:"]{width:var(--w-tablet)}.gps-634297850989118002.gps.gpsil [style*="--line-clamp-tablet:"]{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:var(--line-clamp-tablet)}}@media only screen and (max-width:767px){.gps-634297850989118002.gps.gpsil [style*="--ai-mobile:"]{align-items:var(--ai-mobile)}.gps-634297850989118002.gps.gpsil [style*="--aspect-mobile:"]{aspect-ratio:var(--aspect-mobile)}.gps-634297850989118002.gps.gpsil [style*="--bg-mobile:"]{background:var(--bg-mobile)}.gps-634297850989118002.gps.gpsil [style*="--bga-mobile:"]{background-attachment:var(--bga-mobile)}.gps-634297850989118002.gps.gpsil [style*="--bgc-mobile:"]{background-color:var(--bgc-mobile)}.gps-634297850989118002.gps.gpsil [style*="--bgi-mobile:"]{background-image:var(--bgi-mobile)}.gps-634297850989118002.gps.gpsil [style*="--bgp-mobile:"]{background-position:var(--bgp-mobile)}.gps-634297850989118002.gps.gpsil [style*="--bgr-mobile:"]{background-repeat:var(--bgr-mobile)}.gps-634297850989118002.gps.gpsil [style*="--bgs-mobile:"]{background-size:var(--bgs-mobile)}.gps-634297850989118002.gps.gpsil [style*="--b-mobile:"]{border:var(--b-mobile)}.gps-634297850989118002.gps.gpsil [style*="--bblr-mobile:"]{border-bottom-left-radius:var(--bblr-mobile)}.gps-634297850989118002.gps.gpsil [style*="--bbrr-mobile:"]{border-bottom-right-radius:var(--bbrr-mobile)}.gps-634297850989118002.gps.gpsil [style*="--bs-mobile:"]{border-style:var(--bs-mobile)}.gps-634297850989118002.gps.gpsil [style*="--btlr-mobile:"]{border-top-left-radius:var(--btlr-mobile)}.gps-634297850989118002.gps.gpsil [style*="--btrr-mobile:"]{border-top-right-radius:var(--btrr-mobile)}.gps-634297850989118002.gps.gpsil [style*="--bottom-mobile:"]{bottom:var(--bottom-mobile)}.gps-634297850989118002.gps.gpsil [style*="--cg-mobile:"]{-moz-column-gap:var(--cg-mobile);column-gap:var(--cg-mobile)}.gps-634297850989118002.gps.gpsil [style*="--size-mobile:"]{font-size:var(--size-mobile)}.gps-634297850989118002.gps.gpsil [style*="--gg-mobile:"]{grid-gap:var(--gg-mobile)}.gps-634297850989118002.gps.gpsil [style*="--gtc-mobile:"]{grid-template-columns:var(--gtc-mobile)}.gps-634297850989118002.gps.gpsil [style*="--h-mobile:"]{height:var(--h-mobile)}.gps-634297850989118002.gps.gpsil [style*="--jc-mobile:"]{justify-content:var(--jc-mobile)}.gps-634297850989118002.gps.gpsil [style*="--left-mobile:"]{left:var(--left-mobile)}.gps-634297850989118002.gps.gpsil [style*="--ls-mobile:"]{letter-spacing:var(--ls-mobile)}.gps-634297850989118002.gps.gpsil [style*="--lh-mobile:"]{line-height:var(--lh-mobile)}.gps-634297850989118002.gps.gpsil [style*="--mb-mobile:"]{margin-bottom:var(--mb-mobile)}.gps-634297850989118002.gps.gpsil [style*="--ml-mobile:"]{margin-left:var(--ml-mobile)}.gps-634297850989118002.gps.gpsil [style*="--mr-mobile:"]{margin-right:var(--mr-mobile)}.gps-634297850989118002.gps.gpsil [style*="--mt-mobile:"]{margin-top:var(--mt-mobile)}.gps-634297850989118002.gps.gpsil [style*="--maxw-mobile:"]{max-width:var(--maxw-mobile)}.gps-634297850989118002.gps.gpsil [style*="--minw-mobile:"]{min-width:var(--minw-mobile)}.gps-634297850989118002.gps.gpsil [style*="--op-mobile:"]{opacity:var(--op-mobile)}.gps-634297850989118002.gps.gpsil [style*="--o-mobile:"]{order:var(--o-mobile)}.gps-634297850989118002.gps.gpsil [style*="--of-mobile:"]{overflow:var(--of-mobile)}.gps-634297850989118002.gps.gpsil [style*="--pc-mobile:"]{place-content:var(--pc-mobile)}.gps-634297850989118002.gps.gpsil [style*="--pb-mobile:"]{padding-bottom:var(--pb-mobile)}.gps-634297850989118002.gps.gpsil [style*="--pl-mobile:"]{padding-left:var(--pl-mobile)}.gps-634297850989118002.gps.gpsil [style*="--pr-mobile:"]{padding-right:var(--pr-mobile)}.gps-634297850989118002.gps.gpsil [style*="--pt-mobile:"]{padding-top:var(--pt-mobile)}.gps-634297850989118002.gps.gpsil [style*="--pos-mobile:"]{position:var(--pos-mobile)}.gps-634297850989118002.gps.gpsil [style*="--right-mobile:"]{right:var(--right-mobile)}.gps-634297850989118002.gps.gpsil [style*="--rg-mobile:"]{row-gap:var(--rg-mobile)}.gps-634297850989118002.gps.gpsil [style*="--ta-mobile:"]{text-align:var(--ta-mobile)}.gps-634297850989118002.gps.gpsil [style*="--top-mobile:"]{top:var(--top-mobile)}.gps-634297850989118002.gps.gpsil [style*="--ws-mobile:"]{white-space:var(--ws-mobile)}.gps-634297850989118002.gps.gpsil [style*="--w-mobile:"]{width:var(--w-mobile)}.gps-634297850989118002.gps.gpsil [style*="--line-clamp-mobile:"]{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:var(--line-clamp-mobile)}}.gps-634297850989118002 .gp-rotate-0,.gps-634297850989118002 .gp-rotate-180,.gps-634297850989118002 .mobile\:gp-rotate-0,.gps-634297850989118002 .mobile\:gp-rotate-180,.gps-634297850989118002 .tablet\:gp-rotate-0,.gps-634297850989118002 .tablet\:gp-rotate-180{--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1}.gps-634297850989118002 .gp-g-subheading-2{font-family:var(--g-sh2-ff);font-size:var(--g-sh2-size);font-style:var(--g-sh2-fs);font-weight:var(--g-sh2-weight);letter-spacing:var(--g-sh2-ls);line-height:var(--g-sh2-lh)}.gps-634297850989118002 .gp-g-paragraph-1{font-family:var(--g-p1-ff);font-size:var(--g-p1-size);font-style:var(--g-p1-fs);font-weight:var(--g-p1-weight);letter-spacing:var(--g-p1-ls);line-height:var(--g-p1-lh)}.gps-634297850989118002 .gp-g-paragraph-2{font-family:var(--g-p2-ff);font-size:var(--g-p2-size);font-style:var(--g-p2-fs);font-weight:var(--g-p2-weight);letter-spacing:var(--g-p2-ls);line-height:var(--g-p2-lh)}.gps-634297850989118002 .\!gp-invisible{visibility:hidden!important}.gps-634297850989118002 .gp-invisible{visibility:hidden}.gps-634297850989118002 .gp-static{position:static}.gps-634297850989118002 .\!gp-absolute{position:absolute!important}.gps-634297850989118002 .gp-absolute{position:absolute}.gps-634297850989118002 .gp-relative{position:relative}.gps-634297850989118002 .gp-left-0{left:0}.gps-634297850989118002 .gp-right-0{right:0}.gps-634297850989118002 .gp-z-2{z-index:2}.gps-634297850989118002 .gp-mx-auto{margin-left:auto;margin-right:auto}.gps-634297850989118002 .gp-my-0{margin-bottom:0;margin-top:0}.gps-634297850989118002 .gp-mb-0{margin-bottom:0}.gps-634297850989118002 .gp-block{display:block}.gps-634297850989118002 .gp-inline-block{display:inline-block}.gps-634297850989118002 .\!gp-flex{display:flex!important}.gps-634297850989118002 .gp-flex{display:flex}.gps-634297850989118002 .gp-inline-flex{display:inline-flex}.gps-634297850989118002 .gp-grid{display:grid}.gps-634297850989118002 .gp-contents{display:contents}.gps-634297850989118002 .\!gp-hidden{display:none!important}.gps-634297850989118002 .gp-hidden{display:none}.gps-634297850989118002 .gp-h-5{height:20px}.gps-634297850989118002 .gp-h-auto{height:auto}.gps-634297850989118002 .gp-h-full{height:100%}.gps-634297850989118002 .\!gp-min-h-full{min-height:100%!important}.gps-634297850989118002 .gp-w-5{width:20px}.gps-634297850989118002 .gp-w-full{width:100%}.gps-634297850989118002 .gp-min-w-0{min-width:0}.gps-634297850989118002 .\!gp-max-w-none{max-width:none!important}.gps-634297850989118002 .gp-max-w-full{max-width:100%}.gps-634297850989118002 .gp-flex-1{flex:1 1 0%}.gps-634297850989118002 .gp-flex-none{flex:none}.gps-634297850989118002 .gp-shrink-0{flex-shrink:0}.gps-634297850989118002 .gp-rotate-0{--tw-rotate:0deg}.gps-634297850989118002 .gp-rotate-0,.gps-634297850989118002 .gp-rotate-180{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.gps-634297850989118002 .gp-rotate-180{--tw-rotate:180deg}.gps-634297850989118002 .gp-cursor-default{cursor:default}.gps-634297850989118002 .gp-cursor-pointer{cursor:pointer}.gps-634297850989118002 .gp-select-none{-webkit-user-select:none;-moz-user-select:none;user-select:none}.gps-634297850989118002 .gp-grid-rows-\[1fr\]{grid-template-rows:1fr}.gps-634297850989118002 .\!gp-flex-row{flex-direction:row!important}.gps-634297850989118002 .gp-flex-row{flex-direction:row}.gps-634297850989118002 .gp-flex-col{flex-direction:column}.gps-634297850989118002 .gp-flex-wrap{flex-wrap:wrap}.gps-634297850989118002 .\!gp-flex-nowrap{flex-wrap:nowrap!important}.gps-634297850989118002 .gp-content-start{align-content:flex-start}.gps-634297850989118002 .gp-items-center{align-items:center}.gps-634297850989118002 .gp-justify-start{justify-content:flex-start}.gps-634297850989118002 .gp-justify-end{justify-content:flex-end}.gps-634297850989118002 .gp-justify-center{justify-content:center}.gps-634297850989118002 .gp-justify-between{justify-content:space-between}.gps-634297850989118002 .gp-gap-2{gap:8px}.gps-634297850989118002 .gp-overflow-hidden{overflow:hidden}.gps-634297850989118002 .gp-whitespace-nowrap{white-space:nowrap}.gps-634297850989118002 .gp-break-words{overflow-wrap:break-word}.gps-634297850989118002 .gp-border{border-width:1px}.gps-634297850989118002 .gp-border-transparent{border-color:transparent}.gps-634297850989118002 .gp-p-4{padding:16px}.gps-634297850989118002 .gp-px-4{padding-left:16px;padding-right:16px}.gps-634297850989118002 .gp-py-2{padding-bottom:8px;padding-top:8px}.gps-634297850989118002 .gp-text-left{text-align:left}.gps-634297850989118002 .gp-text-center{text-align:center}.gps-634297850989118002 .gp-leading-\[0\]{line-height:0}.gps-634297850989118002 .\!gp-text-inherit{color:inherit!important}.gps-634297850989118002 .gp-text-g-text-2{color:var(--g-c-text-2)}.gps-634297850989118002 .gp-text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity,1))}.gps-634297850989118002 .gp-no-underline{text-decoration-line:none}.gps-634297850989118002 .gp-decoration-g-text-1{text-decoration-color:var(--g-c-text-1)}.gps-634297850989118002 .gp-decoration-g-text-2{text-decoration-color:var(--g-c-text-2)}.gps-634297850989118002 .gp-opacity-25{opacity:.25}.gps-634297850989118002 .gp-opacity-30{opacity:.3}.gps-634297850989118002 .gp-opacity-75{opacity:.75}.gps-634297850989118002 .gp-transition-colors{transition-duration:.15s;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1)}.gps-634297850989118002 .gp-duration-200{transition-duration:.2s}.gps-634297850989118002 .gp-ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}.gps-634297850989118002 .disabled\:gp-btn-disabled:disabled{cursor:default}.gps-634297850989118002 .\[\&_\.shopify-payment-button\\_\\_button--unbranded\]\:\!gp-g-paragraph-1 .shopify-payment-button__button--unbranded{font-family:var(--g-p1-ff)!important;font-size:var(--g-p1-size)!important;font-style:var(--g-p1-fs)!important;font-weight:var(--g-p1-weight)!important;letter-spacing:var(--g-p1-ls)!important;line-height:var(--g-p1-lh)!important}.gps-634297850989118002 .\[\&_\.shopify-payment-button\\_\\_button--unbranded\]\:\!gp-g-s-medium .shopify-payment-button__button--unbranded{padding:8px 24px!important}.gps-634297850989118002 .before\:gp-left-0:before{content:var(--tw-content);left:0}.gps-634297850989118002 .before\:gp-top-0:before{content:var(--tw-content);top:0}.gps-634297850989118002 .disabled\:gp-opacity-30:disabled{opacity:.3}@media (hover:hover) and (pointer:fine){.gps-634297850989118002 .gp-group\/carousel:hover .group-hover\/carousel\:\!gp-visible{visibility:visible!important}}.gps-634297850989118002 .gp-group\/button:active .group-active\/button\:\!gp-text-inherit{color:inherit!important}.gps-634297850989118002 .data-\[hidden\=true\]\:\!gp-hidden[data-hidden=true]{display:none!important}.gps-634297850989118002 .gp-group[data-state=loading] .group-data-\[state\=loading\]\:gp-visible{visibility:visible}.gps-634297850989118002 .gp-group[data-state=loading] .group-data-\[state\=loading\]\:gp-invisible{visibility:hidden}@keyframes gp-spin{to{transform:rotate(1turn)}}.gps-634297850989118002 .gp-group[data-state=loading] .group-data-\[state\=loading\]\:gp-animate-spin{animation:gp-spin 1s linear infinite}@media (max-width:1024px){.gps-634297850989118002 .tablet\:gp-static{position:static}.gps-634297850989118002 .tablet\:\!gp-absolute{position:absolute!important}.gps-634297850989118002 .tablet\:gp-left-0{left:0}.gps-634297850989118002 .tablet\:gp-right-0{right:0}.gps-634297850989118002 .tablet\:gp-z-2{z-index:2}.gps-634297850989118002 .tablet\:gp-block{display:block}.gps-634297850989118002 .tablet\:\!gp-flex{display:flex!important}.gps-634297850989118002 .tablet\:\!gp-hidden{display:none!important}.gps-634297850989118002 .tablet\:gp-hidden{display:none}.gps-634297850989118002 .tablet\:gp-h-auto{height:auto}.gps-634297850989118002 .tablet\:\!gp-min-h-full{min-height:100%!important}.gps-634297850989118002 .tablet\:gp-flex-none{flex:none}.gps-634297850989118002 .tablet\:gp-rotate-0{--tw-rotate:0deg}.gps-634297850989118002 .tablet\:gp-rotate-0,.gps-634297850989118002 .tablet\:gp-rotate-180{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.gps-634297850989118002 .tablet\:gp-rotate-180{--tw-rotate:180deg}.gps-634297850989118002 .tablet\:\!gp-flex-row{flex-direction:row!important}.gps-634297850989118002 .tablet\:gp-flex-row{flex-direction:row}.gps-634297850989118002 .tablet\:\!gp-flex-nowrap{flex-wrap:nowrap!important}.gps-634297850989118002 .tablet\:gp-px-0{padding-left:0;padding-right:0}}@media (max-width:767px){.gps-634297850989118002 .mobile\:gp-static{position:static}.gps-634297850989118002 .mobile\:\!gp-absolute{position:absolute!important}.gps-634297850989118002 .mobile\:gp-left-0{left:0}.gps-634297850989118002 .mobile\:gp-right-0{right:0}.gps-634297850989118002 .mobile\:gp-z-2{z-index:2}.gps-634297850989118002 .mobile\:gp-block{display:block}.gps-634297850989118002 .mobile\:\!gp-flex{display:flex!important}.gps-634297850989118002 .mobile\:\!gp-hidden{display:none!important}.gps-634297850989118002 .mobile\:gp-hidden{display:none}.gps-634297850989118002 .mobile\:gp-h-auto{height:auto}.gps-634297850989118002 .mobile\:\!gp-min-h-full{min-height:100%!important}.gps-634297850989118002 .mobile\:gp-flex-none{flex:none}.gps-634297850989118002 .mobile\:gp-rotate-0{--tw-rotate:0deg}.gps-634297850989118002 .mobile\:gp-rotate-0,.gps-634297850989118002 .mobile\:gp-rotate-180{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.gps-634297850989118002 .mobile\:gp-rotate-180{--tw-rotate:180deg}.gps-634297850989118002 .mobile\:\!gp-flex-row{flex-direction:row!important}.gps-634297850989118002 .mobile\:gp-flex-row{flex-direction:row}.gps-634297850989118002 .mobile\:\!gp-flex-nowrap{flex-wrap:nowrap!important}.gps-634297850989118002 .mobile\:gp-px-0{padding-left:0;padding-right:0}}.gps-634297850989118002 .\[\&\>svg\]\:\!gp-h-\[var\(--height-desktop\)\]>svg{height:var(--height-desktop)!important}.gps-634297850989118002 .\[\&\>svg\]\:\!gp-h-\[var\(--size-desktop\)\]>svg{height:var(--size-desktop)!important}.gps-634297850989118002 .\[\&\>svg\]\:gp-h-full>svg{height:100%}.gps-634297850989118002 .\[\&\>svg\]\:\!gp-w-\[var\(--size-desktop\)\]>svg{width:var(--size-desktop)!important}.gps-634297850989118002 .\[\&\>svg\]\:\!gp-w-auto>svg{width:auto!important}.gps-634297850989118002 .\[\&\>svg\]\:gp-w-full>svg{width:100%}@media (max-width:1024px){.gps-634297850989118002 .tablet\:\[\&\>svg\]\:\!gp-h-\[var\(--height-tablet\)\]>svg{height:var(--height-tablet)!important}.gps-634297850989118002 .tablet\:\[\&\>svg\]\:\!gp-h-\[var\(--size-tablet\)\]>svg{height:var(--size-tablet)!important}.gps-634297850989118002 .tablet\:\[\&\>svg\]\:\!gp-w-\[var\(--size-tablet\)\]>svg{width:var(--size-tablet)!important}}@media (max-width:767px){.gps-634297850989118002 .mobile\:\[\&\>svg\]\:\!gp-h-\[var\(--height-mobile\)\]>svg{height:var(--height-mobile)!important}.gps-634297850989118002 .mobile\:\[\&\>svg\]\:\!gp-h-\[var\(--size-mobile\)\]>svg{height:var(--size-mobile)!important}.gps-634297850989118002 .mobile\:\[\&\>svg\]\:\!gp-w-\[var\(--size-mobile\)\]>svg{width:var(--size-mobile)!important}}.gps-634297850989118002 .\[\&_\*\]\:gp-max-w-full *{max-width:100%}.gps-634297850989118002 .\[\&_\.shopify-payment-button\\_\\_button--unbranded\]\:gp-min-h-fit .shopify-payment-button__button--unbranded{min-height:-moz-fit-content;min-height:fit-content}.gps-634297850989118002 .\[\&_\.shopify-payment-button\\_\\_button--unbranded\]\:gp-text-g-text-3 .shopify-payment-button__button--unbranded{color:var(--g-c-text-3)}.gps-634297850989118002 .disabled\:\[\&_\.shopify-payment-button\\_\\_button--unbranded\]\:gp-pointer-events-none .shopify-payment-button__button--unbranded:disabled{pointer-events:none}.gps-634297850989118002 .\[\&_p\]\:gp-whitespace-pre-line p{white-space:pre-line}</style>
+    <style {% if section.settings.section_preload == "false" %} class="gps-link" type="text/disabled-css" {% endif %}>@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD6llDB6g-.woff) format('woff');
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD2FlDB6g-.woff) format('woff');
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDDV5DB6g-.woff) format('woff');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfedA.woff) format('woff');
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbSB4ZhRNU.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbSB4ZhRNU.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxdKYbSB4ZhRNU.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbSB4ZhRNU.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbSB4ZhRNU.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYbSB4Zh.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbSB4ZhRNU.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbSB4ZhRNU.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxdKYbSB4ZhRNU.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbSB4ZhRNU.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbSB4ZhRNU.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYbSB4Zh.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbSB4ZhRNU.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbSB4ZhRNU.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxdKYbSB4ZhRNU.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbSB4ZhRNU.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbSB4ZhRNU.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYbSB4Zh.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZJhjp-Ek-_EeAmM.woff) format('woff');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZthjp-Ek-_EeAmM.woff) format('woff');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZNhjp-Ek-_EeAmM.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZxhjp-Ek-_EeAmM.woff) format('woff');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZBhjp-Ek-_EeAmM.woff) format('woff');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZFhjp-Ek-_EeAmM.woff) format('woff');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJbecnFHGPezSQ.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+  
+    
+    
+    
+
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+
+    
+        <section
+          class="gp-mx-auto gp-max-w-full [&_*]:gp-max-w-full {% if section.settings.section_preload == "false" %}gps-lazy {% endif %}"
+          style="--w:100%;--w-tablet:calc(var(--g-ct-w, 100%) + 2 * var(--g-ct-p, 15px));--w-mobile:calc(var(--g-ct-w, 100%) + 2 * var(--g-ct-p, 15px));--pl:none;--pl-tablet:none;--pl-mobile:none;--pr:none;--pr-tablet:none;--pr-mobile:none"
+        >
+          
+    <gp-row gp-data='{"background":{"desktop":{"attachment":"scroll","color":"#FFFFFF","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"preload":false,"repeat":"no-repeat","size":"cover","type":"color"}},"uid":"gUq9UfwCe5"}' data-id="gUq9UfwCe5" id="gUq9UfwCe5" data-same-height-subgrid-container class="gUq9UfwCe5 gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--blockPadding:base;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--pt:0px;--pb:0px;--pt-mobile:0px;--pb-mobile:0px;--pt-tablet:0px;--pb-tablet:0px;--cg:16px;--rg:0px;--gtc:minmax(0, 12fr);--w:100%;--bgc:#FFFFFF;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:start">
+      
+
+      <div
+      data-same-height-display-contents
+      style="--jc:start"
+      class="gB4Ifo62DB gp-relative gp-flex gp-flex-col"
+    >
+      
+    
+      {%- assign gpBkProduct = product -%}
+      
+      {%- liquid
+        if request.page_type == 'product'
+          if 'static' == 'static'
+            if '9519489712359' == 'latest'
+              paginate collections.all.products by 100000
+                assign product = collections.all.products | sort: 'created_at' | reverse | first
+              endpaginate
+            else
+              assign product = all_products['serenna-40']
+              assign productId = '9519489712359' | times: 1
+              if product == empty or product == null
+                paginate collections.all.products by 100000
+                  for item in collections.all.products
+                    if item.id == productId
+                      assign product = item
+                    endif
+                  endfor
+                endpaginate
+              endif
+            endif
+          endif
+        else
+          if '9519489712359' == 'latest'
+            paginate collections.all.products by 100000
+              assign product = collections.all.products | sort: 'created_at'| reverse | first
+            endpaginate
+          else
+            assign product = all_products['serenna-40']
+            assign productId = '9519489712359' | times: 1
+            if product == empty or product == null
+              paginate collections.all.products by 100000
+                for item in collections.all.products
+                  if item.id == productId
+                    assign product = item
+                  endif
+                endfor
+              endpaginate
+            endif
+          endif
+        endif
+      -%}
+    
+    
+    {% if product != empty and product != null %}
+      
+      {%- assign initVariantId =  -%}
+      {%- assign product_form_id = 'product-form-' | append: "gWUiJ8Bi-f" -%}
+      {%- assign variant = product.selected_or_first_available_variant -%}
+      {%- assign productSelectedVariant = product.selected_or_first_available_variant -%}
+      {%-if productSelectedVariant == empty or productSelectedVariant == null -%}
+        {%- assign productSelectedVariant = product.selected_or_first_available_variant -%}
+      {%- endif -%}
+      {%-if variant == empty or variant == null -%}
+        {%- assign variant = product.selected_or_first_available_variant -%}
+      {%- endif -%}
+      {% unless isSettingSameHeightProductList %}
+        {%- assign isSettingSameHeightProductList = false -%}
+      {% endunless %}
+    
+      <gp-product
+        data-uid="gWUiJ8Bi-f"
+        data-id="gWUiJ8Bi-f"
+        style="--pos:relative"
+        
+        gp-context='{"productId": {{ product.id }}, "preSelectedOptionIds": [], "isSyncProduct": "true", "hasPreSelected": false, "variantSelected": {{ variant | json | escape }},  "inventory_management": {{ variant.inventory_management | json | escape  }}, "inventory_policy": {{ variant.inventory_policy | json | escape }}, "inventoryQuantity": {{ variant.inventory_quantity | default: 0 }}, "quantity": 1, "formId": "{{ product_form_id }}" }'
+        gp-data='{"variantSelected": {{ variant | json | escape }}, "quantity": 1, "productUrl":{{ product.url | json | escape }}, "productHandle":{{ product.handle | json | escape }}, "collectionUrl": {{ collection.url | json | escape }}, "collectionHandle": {{ collection.handle | json | escape }}}'
+      >
+        <product-form class="product-form">
+          {%- form 'product', product, id: product_form_id, class: 'form contents', data-type: 'add-to-cart-form', autocomplete: 'off'  -%}
+            <input type="hidden" name="id" value="{{ variant.id }}" />
+            <input type="hidden" name="quantity" value="{{ quantity }}" />
+            <button type="submit" onclick="return false;" style="display:none;"></button>
+            
+    
+
+    
+
+    
+    <gp-row gp-data='{"background":{},"uid":"gWUiJ8Bi-f"}' data-id="gWUiJ8Bi-f-row" id="gWUiJ8Bi-f" data-same-height-subgrid-container class="gWUiJ8Bi-f gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--op-mobile:100%;--pageType:GP_PRODUCT;--pos:relative;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mt:15px;--pl:0px;--pr:0px;--mt-mobile:0px;--ml-mobile:auto;--mb-mobile:0px;--pl-mobile:0px;--pr-mobile:0px;--pl-tablet:16px;--pr-tablet:16px;--cg:60px;--rg:0px;--rg-mobile:8px;--gtc:minmax(0, 6fr) minmax(0, 6fr);--gtc-mobile:minmax(0, 12fr);--w:var(--g-ct-w, 1200px);--w-tablet:100%;--w-mobile:100%;--pc:start">
+      
+
+      <div
+      data-same-height-display-contents
+      style="--jc:start;--o-mobile:0"
+      class="gtJXD3L8Dy gp-relative gp-flex gp-flex-col"
+    >
+      
+  
+    <div
+      data-id="gNUSnQIHlj"
+      style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mt-mobile:16px;--ta:left;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll"
+      data-keep-class="true"
+      class="gNUSnQIHlj gp-custom-code">
+      <div>
+    <style>
+.fungi-gal{
+    --fungi-radius:8px;
+    --fungi-active:#7F4C34;
+    width:100%;
+}
+
+.fungi-gal-main{
+    display:flex;
+    overflow-x:auto;
+    gap:0;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+}
+
+.fungi-gal-main::-webkit-scrollbar{
+    display:none;
+}
+
+.fungi-gal-slide{
+    flex:0 0 100%;
+    scroll-snap-align:center;
+}
+
+.fungi-gal-slide img{
+    width:100%;
+    height:auto;
+    display:block;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:var(--fungi-radius);
+}
+
+.fungi-gal-thumbs{
+    display:grid;
+    grid-template-columns:repeat(9,1fr);
+    gap:8px;
+    margin-top:14px;
+}
+
+.fungi-gal-thumb{
+    border-radius:var(--fungi-radius);
+    overflow:hidden;
+    cursor:pointer;
+    border:2px solid transparent;
+    transition:border-color .25s;
+    padding:0;
+    background:none;
+    display:block;
+    width:100%;
+}
+
+.fungi-gal-thumb.is-active{
+    border-color:var(--fungi-active);
+}
+
+.fungi-gal-thumb:focus-visible{
+    outline:2px solid var(--fungi-active);
+    outline-offset:2px;
+}
+
+.fungi-gal-thumb img{
+    width:100%;
+    height:auto;
+    display:block;
+    aspect-ratio:1/1;
+    object-fit:cover;
+}
+
+@media(prefers-reduced-motion:reduce){
+    .fungi-gal-main{
+        scroll-behavior:auto;
+    }
+}
+
+@media(max-width:768px){
+
+.fungi-gal-main{
+    padding:0 16px;
+    gap:12px;
+}
+
+.fungi-gal-slide{
+    flex:0 0 calc(100% - 32px);
+}
+
+.fungi-gal-thumbs{
+    display:none;
+}
+
+}
+</style>
+
+<div class="fungi-gal">
+
+<div class="fungi-gal-main">
+
+<div class="fungi-gal-slide">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_22.webp?v=1786198987" width="1000" height="1000" fetchpriority="high" decoding="async">
+</div>
+
+<div class="fungi-gal-slide">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_15.webp?v=1786054341" alt="Imagen 2 del producto" width="1000" height="1000" loading="lazy" decoding="async">
+</div>
+
+<div class="fungi-gal-slide">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_4.webp?v=1785900568" alt="Imagen 3 del producto" width="1000" height="1000" loading="lazy" decoding="async">
+</div>
+
+<div class="fungi-gal-slide">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_21.webp?v=1786198986" alt="Imagen 4 del producto" width="1000" height="1000" loading="lazy" decoding="async">
+</div>
+
+<div class="fungi-gal-slide">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_6.webp?v=1785900568" alt="Imagen 5 del producto" width="1000" height="1000" loading="lazy" decoding="async">
+</div>
+
+<div class="fungi-gal-slide">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_7.webp?v=1785900567" alt="Imagen 6 del producto" width="1000" height="1000" loading="lazy" decoding="async">
+</div>
+
+<div class="fungi-gal-slide">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_20.webp?v=1786054879" alt="Imagen 7 del producto" width="1000" height="1000" loading="lazy" decoding="async">
+</div>
+
+<div class="fungi-gal-slide">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_18.webp?v=1786054340" alt="Imagen 8 del producto" width="1000" height="1000" loading="lazy" decoding="async">
+</div>
+
+<div class="fungi-gal-slide">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_19.webp?v=1786054340" alt="Imagen 9 del producto" width="1000" height="1000" loading="lazy" decoding="async">
+</div>
+
+</div>
+
+<div class="fungi-gal-thumbs">
+
+<button type="button" class="fungi-gal-thumb is-active" aria-label="Ver imagen 1">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_22.webp?v=1786198987" alt="" width="200" height="200" decoding="async">
+</button>
+
+<button type="button" class="fungi-gal-thumb" aria-label="Ver imagen 2">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_15.webp?v=1786054341" alt="" width="200" height="200" loading="lazy" decoding="async">
+</button>
+
+<button type="button" class="fungi-gal-thumb" aria-label="Ver imagen 3">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_4.webp?v=1785900568" alt="" width="200" height="200" loading="lazy" decoding="async">
+</button>
+
+<button type="button" class="fungi-gal-thumb" aria-label="Ver imagen 4">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_21.webp?v=1786198986" alt="" width="200" height="200" loading="lazy" decoding="async">
+</button>
+
+<button type="button" class="fungi-gal-thumb" aria-label="Ver imagen 5">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_6.webp?v=1785900568" alt="" width="200" height="200" loading="lazy" decoding="async">
+</button>
+
+<button type="button" class="fungi-gal-thumb" aria-label="Ver imagen 6">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_7.webp?v=1785900567" alt="" width="200" height="200" loading="lazy" decoding="async">
+</button>
+
+<button type="button" class="fungi-gal-thumb" aria-label="Ver imagen 7">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_20.webp?v=1786054879" alt="" width="200" height="200" loading="lazy" decoding="async">
+</button>
+
+<button type="button" class="fungi-gal-thumb" aria-label="Ver imagen 8">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_18.webp?v=1786054340" alt="" width="200" height="200" loading="lazy" decoding="async">
+</button>
+
+<button type="button" class="fungi-gal-thumb" aria-label="Ver imagen 9">
+<img src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_19.webp?v=1786054340" alt="" width="200" height="200" loading="lazy" decoding="async">
+</button>
+
+</div>
+
+</div>
+
+<script>
+(function(){
+
+function initFungiGallery(){
+
+    var galleries=document.querySelectorAll(".fungi-gal");
+
+    galleries.forEach(function(gallery){
+
+        if(gallery.dataset.fungiReady==="1"){return;}
+        gallery.dataset.fungiReady="1";
+
+        var slider=gallery.querySelector(".fungi-gal-main");
+        var slides=Array.prototype.slice.call(gallery.querySelectorAll(".fungi-gal-slide"));
+        var thumbs=Array.prototype.slice.call(gallery.querySelectorAll(".fungi-gal-thumb"));
+
+        if(!slider||!slides.length){return;}
+
+        function offsetFor(i){
+            return slides[i].offsetLeft-slides[0].offsetLeft;
+        }
+
+        function setActive(i){
+            thumbs.forEach(function(t,n){
+                t.classList.toggle("is-active",n===i);
+            });
+        }
+
+        thumbs.forEach(function(thumb,index){
+            thumb.addEventListener("click",function(){
+                slider.scrollTo({left:offsetFor(index),behavior:"smooth"});
+                setActive(index);
+            });
+        });
+
+        var ticking=false;
+
+        slider.addEventListener("scroll",function(){
+            if(ticking){return;}
+            ticking=true;
+            window.requestAnimationFrame(function(){
+                ticking=false;
+                var pos=slider.scrollLeft;
+                var best=0;
+                var bestDist=Infinity;
+                for(var i=0;i<slides.length;i++){
+                    var d=Math.abs(offsetFor(i)-pos);
+                    if(d<bestDist){bestDist=d;best=i;}
+                }
+                setActive(best);
+            });
+        },{passive:true});
+
+    });
+
+}
+
+if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",initFungiGallery);
+}else{
+    initFungiGallery();
+}
+
+})();
+</script>
+    </div>
+    </div>
+  
+    </div><div
+      data-same-height-display-contents
+      style="--jc:start;--o-mobile:1"
+      class="giOEvVMqXe gp-relative gp-flex gp-flex-col"
+    >
+      
+    
+
+    
+
+    
+    <gp-row gp-data='{"background":{"desktop":{"attachment":"scroll","color":"transparent","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"repeat":"no-repeat","size":"cover","type":"color"}},"uid":"g0vEUbAhlV"}' data-id="g0vEUbAhlV" id="g0vEUbAhlV" data-same-height-subgrid-container class="g0vEUbAhlV gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:solid;--bw:0px;--bc:#121212;--shadow:none;--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--op-mobile:100%;--op-tablet:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mt-mobile:8px;--ml-mobile:auto;--mb-mobile:0px;--pt-mobile:0px;--pl-mobile:16px;--pb-mobile:0px;--pr-mobile:16px;--cg:8px;--gtc:minmax(0, 12fr);--gtc-mobile:minmax(0, 12fr);--w:var(--g-ct-w, 1200px);--h:auto;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:start">
+      
+
+      {% render 'gp-section-634297850989118002-13', product: product, variant: variant, product_form_id: product_form_id, productSelectedVariant: productSelectedVariant, form: form  %}
+
+      
+    </gp-row>
+  
+  
+    </div>
+
+      
+    </gp-row>
+  
+  
+          {%- endform -%}
+        </product-form>
+      </gp-product>
+      {%- assign product = gpBkProduct -%}
+    {% else %}
+      <div class="gp-text-center">{{ 'gempages.Product.product_not_found' | t }}</div>
+    {% endif %}
+    <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-product-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  
+    </div>
+
+      
+    </gp-row>
+  
+        </section>
+      
+  
+    
+{% schema %}
+  {
+    "presets": [{ "name": "pdp v3" }],
+    "name": "pdp v3",
+    "tag": "section",
+    "class": "gps-634297850989118002 gps gpsil",
+    "settings": [{"type":"paragraph","content":"Section design by GemPages. [Click here to start design](https://admin.shopify.com/store/hmvkxh-pm/apps/gempages-cro/app/shopify/edit?pageType=THEME_SECTION&editorId=634297850989118002)"},{"type":"select","label":"Section Preload","id":"section_preload","options":[{"label":"On","value":"true"},{"label":"Off","value":"false"},{"label":"Off Lazy Script","value":"off_lazy_script"}],"default":"off_lazy_script"},{"type":"text","label":"Checksum","id":"checksum"},{"type":"html","id":"ggsvalulHPp_childItem_0_1648713837","label":"ggsvalulHPp_childItem_0_1648713837","default":"Reseñas"},{"type":"html","id":"ggsvalulHPp_childItem_1_-108028620","label":"ggsvalulHPp_childItem_1_-108028620","default":"Ingredientes"},{"type":"html","id":"ggsvalulHPp_childItem_2_2091756572","label":"ggsvalulHPp_childItem_2_2091756572","default":"Beneficios"},{"type":"html","id":"gggDJbNf5pR_text_1622670468","label":"gggDJbNf5pR_text_1622670468","default":"\"A mis pacientas les aterra el minoxidil, por que les puede salir barba. Serenna es MUY efectiva y lo mejor... sin minoxidil\""},{"type":"html","id":"ggBgC2g-wnO_srcSet_desktop_src_259103730","label":"ggBgC2g-wnO_srcSet_desktop_src_259103730","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/verificar.png?v=1785451553"},{"type":"html","id":"ggt1IlJAgfj_srcSet_desktop_src_-7621754","label":"ggt1IlJAgfj_srcSet_desktop_src_-7621754","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Dermatologist_selfie_social_medi__202607301749.webp?v=1785451775"},{"type":"html","id":"ggt1IlJAgfj_srcSet_mobile_src_-298446850","label":"ggt1IlJAgfj_srcSet_mobile_src_-298446850","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/images.jpg"},{"type":"html","id":"ggv2bCEvxsR_text_-2076966979","label":"ggv2bCEvxsR_text_-2076966979","default":"Dermatóloga. Maria Ramírez."},{"type":"html","id":"ggr1VAu-w4p_text_1007090928","label":"ggr1VAu-w4p_text_1007090928","default":"\"Infinitas gracias por ayudarme, me devolvió el autoestima, ya llevo 40 días tomándolo y ha funcionado super bien\""},{"type":"html","id":"ggsFaPD1KZ5_srcSet_desktop_src_259103730","label":"ggsFaPD1KZ5_srcSet_desktop_src_259103730","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/verificar.png?v=1785451553"},{"type":"html","id":"gg62LaqAv2h_srcSet_desktop_src_-1242099339","label":"gg62LaqAv2h_srcSet_desktop_src_-1242099339","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Woman_taking_selfie_low_quality_202607301741_1.webp?v=1785451333"},{"type":"html","id":"ggOFzjeLE31_text_1476010846","label":"ggOFzjeLE31_text_1476010846","default":"Laura T."},{"type":"html","id":"gg-y03mFVjM_text_756623540","label":"gg-y03mFVjM_text_756623540","default":"\"Apenas llevo 2 semanas tomándolas, pero inmediatamente me ha frenado la caída del pelo.\""},{"type":"html","id":"gghVh2jzF0O_srcSet_desktop_src_259103730","label":"gghVh2jzF0O_srcSet_desktop_src_259103730","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/verificar.png?v=1785451553"},{"type":"html","id":"gglok8KLvLa_srcSet_desktop_src_-886407028","label":"gglok8KLvLa_srcSet_desktop_src_-886407028","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Woman_taking_close-up_selfie_202607301742.webp?v=1785451389"},{"type":"html","id":"gg63ZIQU0Kz_text_225199718","label":"gg63ZIQU0Kz_text_225199718","default":"Andrea.M"},{"type":"html","id":"ggsJgoYpW5o_text_-1112299904","label":"ggsJgoYpW5o_text_-1112299904","default":"\"Mis pacientas ya habían probaron shampoos, ampollas, minoxidil. Esta marca les SALVO la vida.\""},{"type":"html","id":"ggFDP5EMwW5_srcSet_desktop_src_259103730","label":"ggFDP5EMwW5_srcSet_desktop_src_259103730","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/verificar.png?v=1785451553"},{"type":"html","id":"gg4seAxT2Lf_srcSet_desktop_src_-76131020","label":"gg4seAxT2Lf_srcSet_desktop_src_-76131020","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Man_taking_selfie_in_office_202607301749.webp?v=1785451805"},{"type":"html","id":"gg4seAxT2Lf_srcSet_mobile_src_-606046137","label":"gg4seAxT2Lf_srcSet_mobile_src_-606046137","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Dermatologo-en-Redovan-La-Vega-Baja-del-Segura-Dr.-David-Cremades-Lloria-799x1024.webp"},{"type":"html","id":"ggZI96xqw3r_text_-1294386877","label":"ggZI96xqw3r_text_-1294386877","default":"Dermatólogo. Camilo Torres"},{"type":"html","id":"ggRFOnwZ4xe_text_866373498","label":"ggRFOnwZ4xe_text_866373498","default":"\"Muchas gracias, me encanto el producto, de verdad que he utilizado muchísimos.\""},{"type":"html","id":"ggmmQOHsfUk_srcSet_desktop_src_259103730","label":"ggmmQOHsfUk_srcSet_desktop_src_259103730","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/verificar.png?v=1785451553"},{"type":"html","id":"ggxtLUtfwBw_srcSet_desktop_src_1466203399","label":"ggxtLUtfwBw_srcSet_desktop_src_1466203399","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Woman_taking_close-up_selfie_202607301742_1.webp?v=1785451389"},{"type":"html","id":"ggtySGGR3CO_text_-792742310","label":"ggtySGGR3CO_text_-792742310","default":"Diana.C"},{"type":"html","id":"ggG98mM84vL_text_-837716538","label":"ggG98mM84vL_text_-837716538","default":"\"Totalmente recomendado, había probado de todo y nada, llevo 2 meses y mi cabello ha mejorado un montón.\""},{"type":"html","id":"ggrvLj08gUt_srcSet_desktop_src_259103730","label":"ggrvLj08gUt_srcSet_desktop_src_259103730","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/verificar.png?v=1785451553"},{"type":"html","id":"ggC-uMyTkTZ_srcSet_desktop_src_142644760","label":"ggC-uMyTkTZ_srcSet_desktop_src_142644760","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/images.webp?v=1785446879"},{"type":"html","id":"gg_Tx1HwEN5_text_-346908492","label":"gg_Tx1HwEN5_text_-346908492","default":"Doris Valencia."},{"type":"html","id":"ggn7q5eTQK4_text_-1730740732","label":"ggn7q5eTQK4_text_-1730740732","default":"\"Mis pacientas lo llevan, porque tiene garantía de resultados, pero NO la usan, jaja lo bueno es que funciona.\""},{"type":"html","id":"ggiXQbU1BfW_srcSet_desktop_src_259103730","label":"ggiXQbU1BfW_srcSet_desktop_src_259103730","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/verificar.png?v=1785451553"},{"type":"html","id":"ggH1O_qd7wt_srcSet_desktop_src_418592226","label":"ggH1O_qd7wt_srcSet_desktop_src_418592226","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Female_doctor_close-up_selfie_202607301756.webp?v=1785452189"},{"type":"html","id":"ggH1O_qd7wt_srcSet_mobile_src_185035546","label":"ggH1O_qd7wt_srcSet_mobile_src_185035546","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/images_1.jpg"},{"type":"html","id":"ggeAknbUEHP_text_685722143","label":"ggeAknbUEHP_text_685722143","default":"Dermatologa. Luisa Peña"},{"type":"html","id":"gg97Q0woRyx_text_-371207308","label":"gg97Q0woRyx_text_-371207308","default":"\"Pensé que no funcionaba, pero al segundo mes mi cabello mejoro muchísimo y dejo de caerse.\""},{"type":"html","id":"gg_vshFc-jp_srcSet_desktop_src_259103730","label":"gg_vshFc-jp_srcSet_desktop_src_259103730","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/verificar.png?v=1785451553"},{"type":"html","id":"ggDZqd1KgZr_srcSet_desktop_src_246595410","label":"ggDZqd1KgZr_srcSet_desktop_src_246595410","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/103303202_2913563225359649_9191350915573692665_n.webp?v=1785446880"},{"type":"html","id":"ggyADDntyoq_text_1697742001","label":"ggyADDntyoq_text_1697742001","default":"Bety E."},{"type":"html","id":"ggKapMVwlb9_srcSet_desktop_src_1167443509","label":"ggKapMVwlb9_srcSet_desktop_src_1167443509","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Diseno_sin_titulo_7.svg?v=1785429478"},{"type":"html","id":"ggK_pOiPV0t_text_36389868","label":"ggK_pOiPV0t_text_36389868","default":"90 mg de Ashwagandha"},{"type":"html","id":"ggL-7QMeE3U_srcSet_desktop_src_592805836","label":"ggL-7QMeE3U_srcSet_desktop_src_592805836","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Diseno_sin_titulo_8.svg?v=1785429477"},{"type":"html","id":"ggQrzwfAWTF_text_-1527203381","label":"ggQrzwfAWTF_text_-1527203381","default":"80 mg de Saw Palmetto"},{"type":"html","id":"gg9QwquoavB_srcSet_desktop_src_1555616956","label":"gg9QwquoavB_srcSet_desktop_src_1555616956","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Diseno_sin_titulo_9.svg?v=1785429478"},{"type":"html","id":"ggC_cCf290e_text_1444056547","label":"ggC_cCf290e_text_1444056547","default":"150 mg de Péptidos de Colágeno"},{"type":"html","id":"ggZ2m9mLup6_srcSet_desktop_src_-2054929605","label":"ggZ2m9mLup6_srcSet_desktop_src_-2054929605","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Diseno_sin_titulo_10.svg?v=1785429478"},{"type":"html","id":"ggVG5sxWY-q_text_97128620","label":"ggVG5sxWY-q_text_97128620","default":"100 mg de L-Cisteína"},{"type":"html","id":"gg2PcbZELgg_srcSet_desktop_src_1792472538","label":"gg2PcbZELgg_srcSet_desktop_src_1792472538","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Diseno_sin_titulo_11.svg?v=1785429478"},{"type":"html","id":"gg_FHl2TPrP_text_1557984679","label":"gg_FHl2TPrP_text_1557984679","default":"70 mg de Cola de Caballo&nbsp;"},{"type":"html","id":"ggZFn7-3J6e_srcSet_desktop_src_1862442585","label":"ggZFn7-3J6e_srcSet_desktop_src_1862442585","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Diseno_sin_titulo_13.svg?v=1785429478"},{"type":"html","id":"gg8EkOaQyoK_text_-308598410","label":"gg8EkOaQyoK_text_-308598410","default":"70 mg de Biotina&nbsp;"},{"type":"html","id":"ggLdcz1pEin_srcSet_desktop_src_-2142230344","label":"ggLdcz1pEin_srcSet_desktop_src_-2142230344","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Diseno_sin_titulo_12.svg?v=1785429478"},{"type":"html","id":"gglrptZ3mOM_text_240345837","label":"gglrptZ3mOM_text_240345837","default":"60 mg de Selenio (romero)&nbsp;"},{"type":"html","id":"ggPWDNFL1Ju_srcSet_desktop_src_-1909681091","label":"ggPWDNFL1Ju_srcSet_desktop_src_-1909681091","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Diseno_sin_titulo_14.svg?v=1785429478"},{"type":"html","id":"ggFOBCxJqyp_text_-1717613650","label":"ggFOBCxJqyp_text_-1717613650","default":"80 mg de Cúrcuma"},{"type":"html","id":"ggnKrSiUiKx_childItem_0_899711327","label":"ggnKrSiUiKx_childItem_0_899711327","default":"Acompaña el equilibrio hormonal capilar"},{"type":"html","id":"ggnKrSiUiKx_childItem_1_1288134906","label":"ggnKrSiUiKx_childItem_1_1288134906","default":"Contribuye a la nutrición del folículo desde adentro"},{"type":"html","id":"ggnKrSiUiKx_childItem_2_-1370223815","label":"ggnKrSiUiKx_childItem_2_-1370223815","default":"Sin minoxidil: cero riesgo de vello no deseado"},{"type":"html","id":"ggnKrSiUiKx_childItem_3_-789338630","label":"ggnKrSiUiKx_childItem_3_-789338630","default":"Solo 2 capsulas al día."},{"type":"html","id":"ggnKrSiUiKx_childItem_4_1425033889","label":"ggnKrSiUiKx_childItem_4_1425033889","default":"Diseñado para distintos tipos de alopecia"},{"type":"html","id":"ggQltPe_Wwl_text_-1324634789","label":"ggQltPe_Wwl_text_-1324634789","default":"Sin Minoxidil"},{"type":"html","id":"ggZ2CluP0yK_text_-1131005779","label":"ggZ2CluP0yK_text_-1131005779","default":"Sin fármacos"},{"type":"html","id":"gg2CRUZHzD2_text_-1851319905","label":"gg2CRUZHzD2_text_-1851319905","default":"Sin parabenos"},{"type":"html","id":"ggh9TiRJcwI_text_330224086","label":"ggh9TiRJcwI_text_330224086","default":"+7.000 Calificaciones de 5 Estrellas"},{"type":"html","id":"ggkD_dhQ7Ht_text_-946504954","label":"ggkD_dhQ7Ht_text_-946504954","default":"Para mujeres de 18-50 que experimentan caída del cabello."},{"type":"html","id":"gghKw5Am1kp_text_1028986389","label":"gghKw5Am1kp_text_1028986389","default":"SERENNA · CAPSULAS CAPILARES"},{"type":"html","id":"ggZkxIzAwh6_text_1938551914","label":"ggZkxIzAwh6_text_1938551914","default":"Tu cabello más grueso y abundante en 45 días, si no funciona devolvemos tu dinero."},{"type":"html","id":"ggm3j_Zm-hi_text_-246363916","label":"ggm3j_Zm-hi_text_-246363916","default":"MAS POPULAR: OBTÉN 33% OFF + REGALOS GRATIS 🎁"},{"type":"html","id":"ggCt_drqy7Z_srcSet_desktop_src_236875029","label":"ggCt_drqy7Z_srcSet_desktop_src_236875029","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Agregar_algo_de_texto_2_1.webp?v=1786658556"},{"type":"html","id":"ggeoRsSSHH4_text_-8882082","label":"ggeoRsSSHH4_text_-8882082","default":"Combo 2"},{"type":"html","id":"ggiaHZYhWEd_text_-2133262170","label":"ggiaHZYhWEd_text_-2133262170","default":"Un tratamiento de 3 meses para resultados asegurados."},{"type":"html","id":"ggkcmOm3ULF_displayContent_1473370919","label":"ggkcmOm3ULF_displayContent_1473370919","default":"$129.800 OFF"},{"type":"html","id":"ggFEaD96KVu_text_1574665850","label":"ggFEaD96KVu_text_1574665850","default":"$389.700"},{"type":"html","id":"ggLs8mwycK5_text_-1974986263","label":"ggLs8mwycK5_text_-1974986263","default":"Regalos GRATIS incluidos en tu orden&nbsp;"},{"type":"html","id":"gg_3BtatBgs_text_218295333","label":"gg_3BtatBgs_text_218295333","default":"Tus Regalos GRATIS:"},{"type":"html","id":"ggdYCS9CVKS_text_-2127707681","label":"ggdYCS9CVKS_text_-2127707681","default":"Hasta 33% OFF"},{"type":"html","id":"ggwUEx6KZ6N_text_1818794955","label":"ggwUEx6KZ6N_text_1818794955","default":"GRATIS <s>$0</s>"},{"type":"html","id":"ggsRjkw2Kb0_srcSet_desktop_src_1617237063","label":"ggsRjkw2Kb0_srcSet_desktop_src_1617237063","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_36_1.webp?v=1787534338"},{"type":"html","id":"ggsRjkw2Kb0_srcSet_mobile_src_1617237063","label":"ggsRjkw2Kb0_srcSet_mobile_src_1617237063","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_36_1.webp?v=1787534338"},{"type":"html","id":"ggw3XdOnqaU_text_1611772305","label":"ggw3XdOnqaU_text_1611772305","default":"Envío&nbsp;<br>GRATIS"},{"type":"html","id":"ggk9tyC6TMo_text_1279014382","label":"ggk9tyC6TMo_text_1279014382","default":"OPORTUNIDA"},{"type":"html","id":"ggvH9jMQE2w_srcSet_desktop_src_-1887979063","label":"ggvH9jMQE2w_srcSet_desktop_src_-1887979063","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_40.webp?v=1787534339"},{"type":"html","id":"ggMd3KZTtk1_text_548680598","label":"ggMd3KZTtk1_text_548680598","default":"Rifa de un Apple Watch"},{"type":"html","id":"ggA9M4hChti_text_1818794955","label":"ggA9M4hChti_text_1818794955","default":"GRATIS <s>$0</s>"},{"type":"html","id":"ggTUX7xz9px_srcSet_desktop_src_1737622239","label":"ggTUX7xz9px_srcSet_desktop_src_1737622239","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_38.webp?v=1787534339"},{"type":"html","id":"gg0gLa0GP0K_text_2131237172","label":"gg0gLa0GP0K_text_2131237172","default":"Seguimiento Clínico 1 a 1"},{"type":"html","id":"gggfCltvyEX_text_1818794955","label":"gggfCltvyEX_text_1818794955","default":"GRATIS <s>$0</s>"},{"type":"html","id":"ggRFHrnc7bw_srcSet_desktop_src_-1334803833","label":"ggRFHrnc7bw_srcSet_desktop_src_-1334803833","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_39.webp?v=1787534339"},{"type":"html","id":"ggVRyK52UXW_text_2031125821","label":"ggVRyK52UXW_text_2031125821","default":"Curso Anticaída"},{"type":"html","id":"ggWRs30RZXx_srcSet_desktop_src_1962995702","label":"ggWRs30RZXx_srcSet_desktop_src_1962995702","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/Agregar_algo_de_texto_1_1.webp?v=1786658556"},{"type":"html","id":"gg0WdlyGdBJ_text_1718692324","label":"gg0WdlyGdBJ_text_1718692324","default":"Combo 1"},{"type":"html","id":"ggXT_d0_WGM_text_2043138273","label":"ggXT_d0_WGM_text_2043138273","default":"Un tratamiento completo con el que puedes ver resultados impactantes en 7 semanas"},{"type":"html","id":"ggEGYmNgl9d_displayContent_-1018436518","label":"ggEGYmNgl9d_displayContent_-1018436518","default":"$79.900 OFF"},{"type":"html","id":"ggfuOEnvk_n_text_-1974986263","label":"ggfuOEnvk_n_text_-1974986263","default":"Regalos GRATIS incluidos en tu orden&nbsp;"},{"type":"html","id":"gg2L04Uv4vj_text_218295333","label":"gg2L04Uv4vj_text_218295333","default":"Tus Regalos GRATIS:"},{"type":"html","id":"ggj1xuXy81U_text_129610609","label":"ggj1xuXy81U_text_129610609","default":"Hasta 30% OFF"},{"type":"html","id":"ggdhK2wc1zo_text_1818794955","label":"ggdhK2wc1zo_text_1818794955","default":"GRATIS <s>$0</s>"},{"type":"html","id":"ggURjx_Y4nd_srcSet_desktop_src_1617237063","label":"ggURjx_Y4nd_srcSet_desktop_src_1617237063","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_36_1.webp?v=1787534338"},{"type":"html","id":"gg_qdMjNUCa_text_1611772305","label":"gg_qdMjNUCa_text_1611772305","default":"Envío&nbsp;<br>GRATIS"},{"type":"html","id":"ggsZTovS3qG_text_1818794955","label":"ggsZTovS3qG_text_1818794955","default":"GRATIS <s>$0</s>"},{"type":"html","id":"ggv8NObDpZu_srcSet_desktop_src_1737622239","label":"ggv8NObDpZu_srcSet_desktop_src_1737622239","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_38.webp?v=1787534339"},{"type":"html","id":"ggRKpDeJ7th_text_-1009551666","label":"ggRKpDeJ7th_text_-1009551666","default":"Seguimiento&nbsp;<br>Clínico 1 a 1"},{"type":"html","id":"ggZiDFTZhyw_text_1818794955","label":"ggZiDFTZhyw_text_1818794955","default":"GRATIS <s>$0</s>"},{"type":"html","id":"ggl3nZ8iu9L_srcSet_desktop_src_-1334803833","label":"ggl3nZ8iu9L_srcSet_desktop_src_-1334803833","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_39.webp?v=1787534339"},{"type":"html","id":"ggzOSmG69HF_text_1662435286","label":"ggzOSmG69HF_text_1662435286","default":"Curso<br>Anticaída"},{"type":"html","id":"ggoSiX3E6SS_text_1583074865","label":"ggoSiX3E6SS_text_1583074865","default":"Pack 3"},{"type":"html","id":"ggnzzGf2TRc_text_-1474047284","label":"ggnzzGf2TRc_text_-1474047284","default":"Great value"},{"type":"html","id":"gg_UMwWR1Td_displayContent_1299227233","label":"gg_UMwWR1Td_displayContent_1299227233","default":"Sale {percent_discount} off"},{"type":"html","id":"ggsxwmhy1Bp_label_1569361391","label":"ggsxwmhy1Bp_label_1569361391","default":"Compra 1 por $129.900 + $8.000 de envío"},{"type":"html","id":"ggsxwmhy1Bp_outOfStockLabel_-1609443171","label":"ggsxwmhy1Bp_outOfStockLabel_-1609443171","default":"Out of stock"},{"type":"html","id":"ggsxwmhy1Bp_unavailableLabel_-288996254","label":"ggsxwmhy1Bp_unavailableLabel_-288996254","default":"Unavailable"},{"type":"html","id":"ggsxwmhy1Bp_variantSelectionRequiredMessage_1532913287","label":"ggsxwmhy1Bp_variantSelectionRequiredMessage_1532913287","default":"Please select a variant to add product to cart"},{"type":"html","id":"ggsxwmhy1Bp_successMessage_-2000197294","label":"ggsxwmhy1Bp_successMessage_-2000197294","default":"Add product to cart successfully"},{"type":"html","id":"ggsxwmhy1Bp_errorMessage_2053555109","label":"ggsxwmhy1Bp_errorMessage_2053555109","default":"Cannot add product to cart"},{"type":"html","id":"ggFAdlFo3Jq_text_-1280924842","label":"ggFAdlFo3Jq_text_-1280924842","default":"Envío <strong>GRATIS</strong>"},{"type":"html","id":"gg1qnWyk9_5_text_-1738308833","label":"gg1qnWyk9_5_text_-1738308833","default":"Garantía de <strong>45 días</strong>"},{"type":"html","id":"gglXL3eSC4S_customText_-1210096984","label":"gglXL3eSC4S_customText_-1210096984","default":"Entrega estimada el"},{"type":"html","id":"gg-DLX2ePcG_srcSet_desktop_src_1843440538","label":"gg-DLX2ePcG_srcSet_desktop_src_1843440538","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_42.webp?v=1787543006"},{"type":"html","id":"ggIT-phNuWA_srcSet_desktop_src_-835360765","label":"ggIT-phNuWA_srcSet_desktop_src_-835360765","default":"https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_23_1.webp?v=1786198986"}],
+    "blocks": [{"type": "@app"}],
+    "locales": {}
+  }
+{% endschema %}

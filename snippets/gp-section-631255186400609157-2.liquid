@@ -1,0 +1,306 @@
+<div gp-el-wrapper style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mt:24px;--mb:8px;--mt-tablet:24px;--mb-tablet:8px;--mt-mobile:16px;--mb-mobile:0px;--pl-mobile:0px;--pr-mobile:0px" class="gBnkhPdJef ">
+      
+    {%- assign total_combinations = 1 -%}
+    {% for option in product.options_with_values %}{%- assign total_combinations = total_combinations | times: option.values.size -%}{% endfor %}
+    
+      {%- liquid
+        assign inventory_quantity = variant.inventory_quantity | default: 0
+        assign supported_payment_methods = shop.enabled_payment_types
+      -%}
+    
+    <gp-product-dynamic data-id="gBnkhPdJef" data-translate-label='<p>COMPRAR UNA VEZ</p>'  gp-data='{"setting":{"label":"<p>COMPRAR UNA VEZ</p>"},"totalVariant":"{{total_combinations}}"}
+    '>
+    <div class="gp-block wrap__button--unbranded__gBnkhPdJef [&_.shopify-payment-button\_\_button--unbranded]:gp-min-h-fit disabled:[&_.shopify-payment-button\_\_button--unbranded]:gp-pointer-events-none [&_.shopify-payment-button\_\_button--unbranded]:!gp-g-paragraph-1 [&_.shopify-payment-button\_\_button--unbranded]:!gp-g-s-medium [&_.shopify-payment-button\_\_button--unbranded]:gp-text-g-text-3">
+        {{ form | payment_button }}
+    </div>
+    {% style %}
+      
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button {
+      display: inline-block;
+      min-height: unset !important;
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button div {
+      width: 100%;
+      margin-top: 0px !important;
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__more-options {
+      display: none;
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded {
+      max-width: 100%;
+      min-width: unset;
+      min-height: unset !important;
+      background-color: unset !important;
+      position: relative;
+      border: none !important;
+      margin: 0;
+      z-index: 0;
+      border-radius: unset;
+      width: 100%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded::before {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: -1;
+      transition-duration: 0.2s;
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded::after {
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded::after:hover {
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button > div {
+      max-width: 100%;
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button > div > div {
+      max-width: 100%;
+    }
+
+    
+    .wrap__button--unbranded__gBnkhPdJef {
+      text-align: left !important;
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button {
+      width: 100%;
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded {
+      width: 100%;
+      text-transform: unset;
+      
+      
+    padding-top: 8px !important;;
+    padding-bottom: 8px !important;;
+    padding-left: 0px !important;;
+    padding-right: 0px !important;;
+  
+      
+    width: 100%;
+    height: Auto;
+  
+      
+      
+      border-bottom-left-radius: 9999px !important;
+      border-bottom-right-radius: 9999px !important;
+      border-top-left-radius: 9999px !important;
+      border-top-right-radius: 9999px !important;
+      
+      
+  ;
+  font-size: 16px !important;
+  color: var(--g-c-text-3, text-3) !important;
+  font-weight: bold !important;
+  ;
+  ;
+  ;
+  ;
+  ;
+  none;
+  
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded:hover {
+      
+      ;
+      
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded::before {
+      border-style: none;
+  border-width: 1px 1px 1px 1px;
+  border-color: #121212;
+  
+      
+      border-bottom-left-radius: 9999px;
+      border-bottom-right-radius: 9999px;
+      border-top-left-radius: 9999px;
+      border-top-right-radius: 9999px;
+      
+      background-image: linear-gradient(130deg, #7f1201 0%, #ba695d 100%);
+      undefined
+      
+
+
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded:hover::before {
+      background-image : unset;
+      
+      
+      background-color: var(--g-c-highlight, highlight);
+      
+      
+    }
+  
+
+    @media only screen and (max-width: 1024px) and (min-width: 768px) {
+      
+    .wrap__button--unbranded__gBnkhPdJef {
+      
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button {
+      width: 100%;
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded {
+      width: 100%;
+      text-transform: unset;
+      
+        
+        font-size: 16px !important;
+        
+      
+      
+    padding-top: ;
+    padding-bottom: ;
+    padding-left: ;
+    padding-right: ;
+  
+      
+    width: 100%;
+    height: Auto;
+  
+      
+      
+      border-bottom-left-radius: 9999px !important;
+      border-bottom-right-radius: 9999px !important;
+      border-top-left-radius: 9999px !important;
+      border-top-right-radius: 9999px !important;
+      
+      
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded:hover {
+      
+      ;
+      
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded::before {
+      border-style: none;
+  border-width: 1px 1px 1px 1px;
+  border-color: #121212;
+  
+      
+      border-bottom-left-radius: 9999px;
+      border-bottom-right-radius: 9999px;
+      border-top-left-radius: 9999px;
+      border-top-right-radius: 9999px;
+      
+      background-image: linear-gradient(130deg, #7f1201 0%, #ba695d 100%);
+      undefined
+      
+
+
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded:hover::before {
+      background-image : unset;
+      
+      
+      background-color: var(--g-c-highlight, highlight);
+      
+      
+    }
+  
+    }
+
+    @media only screen and (max-width: 767px) {
+      
+    .wrap__button--unbranded__gBnkhPdJef {
+      
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button {
+      width: 100%;
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded {
+      width: 100%;
+      text-transform: unset;
+      
+        
+        font-size: 17px !important;
+        
+      
+      
+    padding-top: 8px !important;;
+    padding-bottom: 8px !important;;
+    padding-left: 0px !important;;
+    padding-right: 0px !important;;
+  
+      
+    width: 100%;
+    height: Auto;
+  
+      
+      
+      border-bottom-left-radius: 9999px !important;
+      border-bottom-right-radius: 9999px !important;
+      border-top-left-radius: 9999px !important;
+      border-top-right-radius: 9999px !important;
+      
+      
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded:hover {
+      
+      ;
+      
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded::before {
+      border-style: none;
+  border-width: 1px 1px 1px 1px;
+  border-color: #121212;
+  
+      
+      border-bottom-left-radius: 9999px;
+      border-bottom-right-radius: 9999px;
+      border-top-left-radius: 9999px;
+      border-top-right-radius: 9999px;
+      
+      background-image: linear-gradient(130deg, #7f1201 0%, #ba695d 100%);
+      undefined
+      
+
+
+    }
+
+    .wrap__button--unbranded__gBnkhPdJef .shopify-payment-button .shopify-payment-button__button--unbranded:hover::before {
+      background-image : unset;
+      
+      
+      background-color: var(--g-c-highlight, highlight);
+      
+      
+    }
+  
+    }
+  
+    {% endstyle %}
+    </gp-product-dynamic>
+    <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-product-dynamic-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  
+      </div>
