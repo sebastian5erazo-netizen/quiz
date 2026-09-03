@@ -5,7 +5,13 @@
     </a>
 
     <a href="{{ routes.root_url }}" class="site-header__logo">
-      {{ shop.name }}
+      <img
+        src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/WhatsApp_Image_2026-04-21_at_4.33.52_PM_1.webp?v=1780624424"
+        alt="{{ shop.name }}"
+        width="180"
+        height="48"
+        loading="eager"
+      >
     </a>
 
     <div class="site-header__icons">
@@ -54,12 +60,13 @@
   }
 
   .site-header__logo {
-    text-decoration: none;
-    color: var(--color-brand-maroon);
-    font-family: var(--font-heading--family);
-    font-size: 1.6rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+
+  .site-header__logo img {
+    height: 2rem;
+    width: auto;
   }
 
   .site-header__icon-link {
