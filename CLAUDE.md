@@ -95,3 +95,32 @@ Implementa el marcado que corresponda según el tipo de página, sirviéndolo en
 8. ¿Las imágenes están optimizadas, con lazy load salvo la principal, y con `alt` descriptivo?
 9. ¿Esta página ataca una sola intención de búsqueda, sin competir con otra página del sitio?
 10. ¿Existe una vía de conversión clara si la página es transaccional?git add .
+## Identidad de marca (Manual SERENNA)
+
+Respeta esta identidad en todo el tema. No sustituyas colores ni tipografías por defaults del framework o del theme base.
+
+### Tipografía
+
+- **Encabezados y títulos (H1, H2, H3, logotipo, hero):** Keroll.
+  - Keroll no es una fuente de Google Fonts. Debe cargarse como `@font-face` con los archivos de fuente propios (woff2/woff). Si Codex no tiene el archivo de la fuente, debe dejarlo señalado como pendiente en vez de sustituirla silenciosamente por otra tipografía.
+- **Cuerpo de texto, párrafos, UI general:** IBM Plex Sans.
+  - Esta sí está disponible en Google Fonts / npm, se puede cargar de forma estándar.
+- No mezclar: Keroll solo para títulos/jerarquía visual, IBM Plex Sans para todo el texto corrido, botones, formularios y microcopys.
+
+### Paleta de colores
+
+Colores sólidos (uso principal, marca, acentos, CTAs):
+- `#F8C4BF`
+- `#7E2710`
+- `#D45B14`
+
+Colores pastel (fondos, superficies suaves, secciones secundarias):
+- `#FCCF9F`
+- `#FAF1F0`
+- `#FEE7D0`
+
+Reglas de uso:
+- Los colores sólidos son los que deben usarse para elementos de alto contraste y llamadas a la acción (botones de compra, enlaces destacados, elementos de marca).
+- Los colores pastel son para fondos, separadores de sección y superficies donde no debe competir con el contenido principal.
+- Mantener buen contraste de accesibilidad (WCAG AA) entre texto y fondo al combinar estos colores; si una combinación de la paleta no cumple contraste mínimo, ajustar tono/peso de fuente antes que sustituir el color por uno fuera de la paleta.
+- No introducir colores nuevos fuera de esta paleta sin consultarlo primero.
