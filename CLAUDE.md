@@ -124,3 +124,520 @@ Reglas de uso:
 - Los colores pastel son para fondos, separadores de sección y superficies donde no debe competir con el contenido principal.
 - Mantener buen contraste de accesibilidad (WCAG AA) entre texto y fondo al combinar estos colores; si una combinación de la paleta no cumple contraste mínimo, ajustar tono/peso de fuente antes que sustituir el color por uno fuera de la paleta.
 - No introducir colores nuevos fuera de esta paleta sin consultarlo primero.
+
+Voy a levantar una ficha técnica de las tres zonas directamente desde el tema: **barra de anuncios, encabezado y Section 1**. Así te doy colores, tipografías, tamaños, espaciados, bordes y comportamiento responsive sin inventar valores.
+
+Ya tengo los valores actuales. Ahora voy a contrastar la estructura recomendada con la documentación de Shopify para separar bien lo que debe ir en Liquid/CSS del tema y lo que todavía depende de GemPages.
+
+Sí. Para migrarlo correctamente, separaría la página en **tres componentes independientes**: la barra de anuncios, el encabezado nativo y una nueva sección Liquid/CSS para reemplazar Section 1 de GemPages.
+
+La inspección confirma los siguientes valores.
+
+## 1. Barra de anuncios
+
+Esta parte **no usa GemPages**. Es una sección nativa de Shopify ubicada antes del encabezado.
+
+### Contenido actual
+
+Hay dos mensajes configurados:
+
+- **“Envíos a todo Colombia”**
+- **“Recibe regalos especiales”**
+
+Ambos anuncios no tienen enlace configurado.
+
+La rotación automática está desactivada:
+
+```text
+Rotación automática: false
+Intervalo configurado: 5
+```
+
+El intervalo de 5 segundos no tiene efecto mientras la rotación siga desactivada. No se pudo confirmar desde la configuración si se muestra siempre el primer anuncio o si existe navegación manual.
+
+### Colores confirmados
+
+La barra usa el esquema `scheme-4`:
+
+```css
+--announcement-background: #421314;
+--announcement-text: #FFFFFF;
+--announcement-button-background: #FFFFFF;
+--announcement-button-text: #8E605D;
+--announcement-secondary-button-text: #FFFFFF;
+--announcement-shadow: #421314;
+```
+
+Visualmente, el fondo es un **borgoña/marrón oscuro** y el texto es blanco.
+
+### Otros ajustes
+
+```text
+Línea separadora: activada
+Redes sociales: desactivadas
+Selector de país: desactivado
+Selector de idioma: desactivado
+```
+
+La barra no tiene altura, tamaño de letra, interlineado o padding configurados directamente. Esos valores vienen del CSS interno del tema.
+
+### Tipografía
+
+La barra hereda la tipografía general del tema:
+
+```css
+font-family: "IBM Plex Sans", sans-serif;
+font-weight: 400;
+```
+
+La configuración global indica:
+
+```text
+Fuente de encabezados: IBM Plex Sans
+Fuente de cuerpo: IBM Plex Sans
+Variante: ibm_plex_sans_n4
+Escala de encabezados: 110
+Escala del cuerpo: 105
+```
+
+Los valores `110` y `105` son escalas del tema, no tamaños directos en píxeles.
+
+### Estructura recomendada en código
+
+```html
+<div class="announcement-bar">
+  <div class="announcement-bar__inner">
+    <p>Envíos a todo Colombia</p>
+  </div>
+</div>
+```
+
+CSS base recomendado:
+
+```css
+.announcement-bar {
+  background: #421314;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+}
+
+.announcement-bar__inner {
+  width: min(100% - 56px, 1200px);
+  margin-inline: auto;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+```
+
+La altura de `40px` sería una propuesta inicial, no un valor confirmado del tema. Para una copia exacta habría que medir la barra renderizada.
+
+---
+
+## 2. Encabezado
+
+El encabezado también es **nativo de Shopify**, no de GemPages. Está ubicado inmediatamente después de la barra de anuncios.
+
+### Estructura actual
+
+```text
+Logo en escritorio: top-center
+Logo en móvil: centrado
+Menú: main-menu
+Tipo de menú: dropdown
+Encabezado fijo: on-scroll-up
+Línea separadora: activada
+Esquema de color: scheme-3
+Esquema del menú: scheme-3
+```
+
+`on-scroll-up` significa que el encabezado reaparece cuando el usuario se desplaza hacia arriba. No está configurado como permanentemente fijo.
+
+### Logo
+
+El logo actual tiene:
+
+```text
+Ancho configurado: 140px
+Recurso: gid://shopify/MediaImage/39486118396135
+```
+
+No hay un ancho móvil independiente configurado. Por eso, el código debería mantener el ancho de escritorio y permitir que el logo se reduzca en pantallas pequeñas si fuera necesario.
+
+Ejemplo:
+
+```css
+.site-header__logo {
+  display: block;
+  width: 140px;
+  height: auto;
+}
+
+@media screen and (max-width: 749px) {
+  .site-header__logo {
+    width: 120px;
+  }
+}
+```
+
+El valor móvil de `120px` es una recomendación inicial, no un valor confirmado.
+
+### Colores confirmados
+
+El encabezado utiliza `scheme-3`:
+
+```css
+--header-background: #FFFFFF;
+--header-text: #421314;
+--header-button-background: #8E605D;
+--header-button-text: #421314;
+--header-secondary-button-text: #FFFFFF;
+--header-shadow: #B7A2A6;
+```
+
+En términos visuales:
+
+- Fondo blanco.
+- Texto y navegación en borgoña oscuro `#421314`.
+- Botones en marrón rosado `#8E605D`.
+- Línea separadora activada.
+
+El color exacto y la opacidad de la línea separadora no están expuestos en la configuración.
+
+### Elementos activos
+
+El encabezado tiene activados:
+
+```text
+Selector de país/región: sí
+Selector de idioma: sí
+Avatar de cliente: sí
+```
+
+El menú es:
+
+```text
+main-menu
+```
+
+No se obtuvo el contenido interno del menú, por lo que para migrarlo debes conservar desde Shopify:
+
+- Los nombres de los enlaces.
+- El orden.
+- Las URL.
+- Los submenús.
+- Los elementos anidados.
+
+No se confirmaron configuraciones independientes para el icono de búsqueda, carrito, contador del carrito o iconos personalizados. Esos elementos pueden formar parte de la estructura fija del tema.
+
+### Espaciado confirmado
+
+```text
+Margen inferior: 0
+Padding superior: 0
+Padding inferior: 0
+```
+
+Valores generales del tema:
+
+```text
+Ancho máximo: 1200px
+Separación horizontal de grid: 28px
+Separación vertical de grid: 28px
+Separación entre secciones: 0
+```
+
+El encabezado no tiene altura fija. Su altura depende del logo, los iconos, el menú y el CSS interno del tema.
+
+### Estructura recomendada
+
+```html
+<header class="site-header">
+  <div class="site-header__inner">
+    <button class="site-header__menu-button" aria-label="Abrir menú">
+      <!-- icono del menú -->
+    </button>
+
+    <nav class="site-header__nav">
+      <!-- main-menu -->
+    </nav>
+
+    <a class="site-header__logo" href="/">
+      <!-- imagen del logo -->
+    </a>
+
+    <div class="site-header__actions">
+      <!-- país, idioma, cuenta, búsqueda, carrito -->
+    </div>
+  </div>
+</header>
+```
+
+Sin embargo, la posición exacta del menú y de los iconos debe medirse visualmente, porque la configuración solo confirma que el logo está centrado arriba en escritorio, no todos los offsets internos.
+
+---
+
+## 3. Section 1 de GemPages
+
+Esta es la parte que sí conviene reemplazar por una sección nativa de Shopify. Actualmente está implementada con GemPages como la primera sección de la página de inicio.
+
+```text
+Nombre: Section 1
+Tipo: gp-section
+Estado: activa
+Ubicación: primera sección de contenido de la página de inicio
+Precarga: activada
+```
+
+La sección contiene texto, un CTA, un SVG y un video de fondo para tablet.
+
+### Contenido exacto
+
+#### Texto principal
+
+```html
+Menos caída, más densidad
+```
+
+Color:
+
+```css
+color: #7F1201;
+background: transparent;
+```
+
+No tiene una familia tipográfica definida directamente en el HTML.
+
+#### Texto secundario
+
+```html
+Nunca fue tu culpa, usaste el sistema y producto equivocados
+```
+
+Color:
+
+```css
+color: #000000;
+background: transparent;
+```
+
+El HTML original contiene un espacio inicial `&nbsp;`. En la migración recomiendo eliminarlo y controlar el espaciado mediante CSS, porque un espacio invisible dentro del contenido puede generar una sangría irregular:
+
+```html
+<p class="hero__description">
+  Nunca fue tu culpa, usaste el sistema y producto equivocados
+</p>
+```
+
+#### Botón
+
+Texto:
+
+```text
+Recuperar mi cabello
+```
+
+Color del texto:
+
+```css
+color: #FBF0EF;
+```
+
+No se pudo confirmar:
+
+- El enlace de destino.
+- El color de fondo.
+- El borde.
+- El radio.
+- El padding.
+- El estado hover.
+- El tamaño.
+- La sombra.
+
+Esos valores deben recuperarse desde el editor de GemPages o desde el CSS renderizado antes de reemplazar el botón.
+
+#### Texto adicional
+
+```html
+Recomendado por dermatólogos
+```
+
+Color:
+
+```css
+color: #000000;
+background: transparent;
+```
+
+#### SVG
+
+Se utiliza el mismo archivo para escritorio y móvil:
+
+```text
+https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_29.svg?v=1785644419
+```
+
+En la migración debes incluirlo con `width`, `height` y `alt` para evitar saltos visuales mientras carga:
+
+```html
+<img
+  src="https://cdn.shopify.com/s/files/1/0767/8292/8103/files/hampoos_29.svg?v=1785644419"
+  alt="Producto para el cuidado del cabello"
+  width="600"
+  height="600"
+  loading="eager"
+>
+```
+
+Los valores `600 × 600` son solo de ejemplo. Debes reemplazarlos por las dimensiones reales del SVG.
+
+#### Video
+
+Para tablet está configurado este video externo:
+
+```text
+https://media.w3.org/2010/05/sintel/trailer.mp4
+```
+
+Antes de publicarlo, verifica que sea intencional. El archivo se llama `Sintel trailer`, por lo que parece un recurso de demostración o prueba, no necesariamente el video definitivo de la marca.
+
+La estructura recomendada sería:
+
+```html
+<section class="hero">
+  <div class="hero__media">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      aria-hidden="true">
+      <source
+        src="https://media.w3.org/2010/05/sintel/trailer.mp4"
+        type="video/mp4">
+    </video>
+  </div>
+
+  <div class="hero__content">
+    <p class="hero__eyebrow">Recomendado por dermatólogos</p>
+    <h1>Menos caída, más densidad</h1>
+    <p class="hero__description">
+      Nunca fue tu culpa, usaste el sistema y producto equivocados
+    </p>
+    <a class="hero__button" href="/collections/all">
+      Recuperar mi cabello
+    </a>
+  </div>
+
+  <div class="hero__product">
+    <img src="..." alt="Producto para el cuidado del cabello">
+  </div>
+</section>
+```
+
+La URL `/collections/all` es únicamente un ejemplo. El destino real del botón no fue identificado y no conviene inventarlo.
+
+### Colores de Section 1
+
+Usa estas variables locales:
+
+```css
+:root {
+  --hero-heading: #7F1201;
+  --hero-body: #000000;
+  --hero-button-text: #FBF0EF;
+  --hero-transparent: transparent;
+}
+```
+
+El color `#7F1201` coincide con el color de botón del `scheme-1` del tema, pero Section 1 no está configurada oficialmente con `scheme-1`. Por tanto, debes tratar estos colores como valores propios de GemPages.
+
+### Tipografía de Section 1
+
+Aquí hay que ser cuidadosos. El HTML de GemPages no define la fuente. El tema global utiliza:
+
+```css
+font-family: "IBM Plex Sans", sans-serif;
+font-weight: 400;
+```
+
+Pero GemPages podría aplicar otra fuente mediante clases o CSS propio. La migración debería fijar la fuente explícitamente para que el diseño no cambie:
+
+```css
+.hero {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.hero h1,
+.hero p,
+.hero a {
+  font-family: inherit;
+}
+```
+
+No se confirmaron los tamaños, pesos, interlineados ni espaciados de los textos de GemPages. Por eso, para una copia exacta hay que medir la página actual o revisar el CSS generado por GemPages.
+
+---
+
+## Sistema de colores completo
+
+Puedes centralizar los colores así:
+
+```css
+:root {
+  /* Barra de anuncios */
+  --color-announcement-bg: #421314;
+  --color-announcement-text: #FFFFFF;
+
+  /* Encabezado */
+  --color-header-bg: #FFFFFF;
+  --color-header-text: #421314;
+  --color-header-button: #8E605D;
+  --color-header-shadow: #B7A2A6;
+
+  /* Section 1 */
+  --color-hero-heading: #7F1201;
+  --color-hero-body: #000000;
+  --color-hero-button-text: #FBF0EF;
+
+  /* Tipografía */
+  --font-heading: "IBM Plex Sans", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+}
+```
+
+También están configurados globalmente:
+
+```text
+Radio de botones: 40px
+Borde de botones: 1px
+Opacidad del borde: 100%
+Ancho máximo de contenido: 1200px
+Grid horizontal: 28px
+Grid vertical: 28px
+```
+
+El radio de `40px` y el borde de `1px` aplican con seguridad a los botones nativos del tema, pero no se puede garantizar que el botón de GemPages los utilice.
+
+## Orden recomendado de implementación
+
+1. Mantener la barra de anuncios como componente nativo o convertirla en una sección Liquid muy pequeña.
+2. Mantener el encabezado nativo de Shopify, porque no pertenece a GemPages y ya está optimizado dentro del tema.
+3. Crear una sección Liquid propia para reemplazar únicamente Section 1.
+4. Eliminar la sección de GemPages después de comprobar que el reemplazo visual funciona.
+5. Confirmar que no queden scripts, snippets o app embeds de GemPages cargándose en la página.
+6. Servir el SVG y las imágenes desde Shopify CDN.
+7. Usar `loading="eager"` solo para el contenido visible al cargar y `loading="lazy"` para imágenes que estén más abajo.
+8. Añadir dimensiones reales a las imágenes para evitar cambios de layout.
+9. Mantener un solo `h1` en la sección principal.
+10. Verificar la versión móvil, tablet y escritorio por separado.
+
+Shopify señala que las aplicaciones pueden dejar código en el tema incluso después de desinstalarse, así que quitar visualmente GemPages no siempre elimina automáticamente todos sus recursos. Conviene revisar también los snippets, app embeds y scripts asociados antes de medir el rendimiento.
+
+Lo que todavía no se puede confirmar únicamente desde la configuración de Shopify es el tamaño exacto de los textos, la posición de cada elemento, el padding interno, los breakpoints, el estilo hover del botón, el enlace del CTA y las reglas de reproducción del video. Esos datos están dentro de GemPages o de su CSS generado.
+
