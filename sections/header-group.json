@@ -19,9 +19,15 @@
           "settings": {
             "text": "Envíos a todo Colombia"
           }
+        },
+        "message-2": {
+          "type": "message",
+          "settings": {
+            "text": "Recibe regalos especiales"
+          }
         }
       },
-      "block_order": ["message-1"]
+      "block_order": ["message-1", "message-2"]
     },
     "header": {
       "type": "header",
