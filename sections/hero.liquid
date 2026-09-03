@@ -1,0 +1,156 @@
+{% comment %}
+  Hero de la página de inicio. Contiene el único <h1> de la página.
+{% endcomment %}
+
+<div class="hero full-width">
+  <div class="hero__content">
+    <h1 class="hero__title">{{ section.settings.heading }}</h1>
+
+    {% if section.settings.subheading != blank %}
+      <p class="hero__subtitle">{{ section.settings.subheading }}</p>
+    {% endif %}
+
+    {% if section.settings.button_label != blank %}
+      <a href="{{ section.settings.button_link | default: '#' }}" class="hero__cta">
+        {{ section.settings.button_label }}
+      </a>
+    {% endif %}
+
+    {% if section.settings.rating_text != blank %}
+      <div class="hero__rating">
+        <span class="hero__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="hero__rating-text">{{ section.settings.rating_text }}</span>
+      </div>
+    {% endif %}
+  </div>
+
+  {% if section.settings.image %}
+    {% liquid
+      assign hero_image_alt = section.settings.image.alt | default: section.settings.heading | strip_html
+    %}
+    <div class="hero__media">
+      {{
+        section.settings.image
+        | image_url: width: 1600
+        | image_tag:
+          loading: 'eager',
+          fetchpriority: 'high',
+          alt: hero_image_alt,
+          widths: '600, 900, 1200, 1600',
+          sizes: '(min-width: 750px) 50vw, 100vw'
+      }}
+    </div>
+  {% endif %}
+</div>
+
+{% stylesheet %}
+  .hero {
+    background-color: var(--color-brand-pink-bg);
+    padding-block: 3rem;
+  }
+
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    max-width: 40rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-family: var(--font-heading--family);
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    line-height: 1.15;
+    color: var(--color-brand-maroon-darkest);
+    margin: 0;
+  }
+
+  .hero__title .accent {
+    color: var(--color-brand-accent);
+  }
+
+  .hero__subtitle {
+    font-size: 1.05rem;
+    color: var(--color-foreground);
+    margin: 0;
+  }
+
+  .hero__cta {
+    display: inline-block;
+    background: linear-gradient(180deg, var(--color-brand-maroon) 0%, var(--color-brand-terracotta) 100%);
+    color: var(--color-brand-cream);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.9rem 2.5rem;
+    border-radius: 999px;
+  }
+
+  .hero__rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hero__stars {
+    color: var(--color-brand-maroon);
+    letter-spacing: 0.1rem;
+  }
+
+  .hero__media {
+    margin-top: 2.5rem;
+  }
+
+  .hero__media img {
+    border-radius: 1rem;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:general.hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:labels.heading",
+      "default": "Menos ca<span class=\"accent\">í</span>da, m<span class=\"accent\">á</span>s densidad"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "t:labels.subheading",
+      "default": "Nunca fue tu culpa, usaste el sistema y producto equivocados"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:labels.button_label",
+      "default": "Recuperar mi cabello"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:labels.button_link"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "t:labels.rating_text",
+      "default": "Recomendado por dermatólogos"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:labels.image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:general.hero"
+    }
+  ]
+}
+{% endschema %}

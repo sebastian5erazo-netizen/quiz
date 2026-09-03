@@ -1,0 +1,12 @@
+{% doc %}
+  Datos estructurados JSON-LD para la página de inicio (Organization / OnlineStore).
+{% enddoc %}
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OnlineStore",
+    "name": {{ shop.name | json }},
+    "url": {{ request.origin | append: routes.root_url | json }}
+  }
+</script>

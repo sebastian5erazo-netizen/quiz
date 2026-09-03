@@ -1,0 +1,145 @@
+{% comment %}
+  Renders a top announcement bar with one or more rotating messages.
+  All messages are present in the initial HTML; only their visibility is
+  toggled client-side, so the content stays readable with JavaScript off.
+{% endcomment %}
+
+<announcement-bar class="announcement-bar full-width">
+  <button
+    type="button"
+    class="announcement-bar__control announcement-bar__control--prev"
+    aria-label="{{ 'accessibility.previous' | t }}"
+    {% if section.blocks.size <= 1 %}
+      hidden
+    {% endif %}
+  >
+    &lsaquo;
+  </button>
+
+  <ul class="announcement-bar__list">
+    {% for block in section.blocks %}
+      <li
+        class="announcement-bar__item"
+        {% unless forloop.first %}
+          hidden
+        {% endunless %}
+        {{ block.shopify_attributes }}
+      >
+        {{ block.settings.text }}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <button
+    type="button"
+    class="announcement-bar__control announcement-bar__control--next"
+    aria-label="{{ 'accessibility.next' | t }}"
+    {% if section.blocks.size <= 1 %}
+      hidden
+    {% endif %}
+  >
+    &rsaquo;
+  </button>
+</announcement-bar>
+
+{% stylesheet %}
+  .announcement-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background-color: var(--color-brand-maroon-darkest);
+    color: var(--color-brand-cream);
+    padding: 0.6rem var(--page-margin);
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+
+  .announcement-bar__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .announcement-bar__item[hidden] {
+    display: none;
+  }
+
+  .announcement-bar__control {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .announcement-bar__control[hidden] {
+    visibility: hidden;
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  if (!customElements.get('announcement-bar')) {
+    customElements.define(
+      'announcement-bar',
+      class AnnouncementBar extends HTMLElement {
+        connectedCallback() {
+          this.items = Array.from(this.querySelectorAll('.announcement-bar__item'));
+          this.index = 0;
+
+          const prevButton = this.querySelector('.announcement-bar__control--prev');
+          const nextButton = this.querySelector('.announcement-bar__control--next');
+
+          prevButton?.addEventListener('click', () => this.show(this.index - 1));
+          nextButton?.addEventListener('click', () => this.show(this.index + 1));
+        }
+
+        show(index) {
+          const total = this.items.length;
+          if (!total) return;
+
+          this.index = (index + total) % total;
+          this.items.forEach((item, i) => {
+            item.hidden = i !== this.index;
+          });
+        }
+      }
+    );
+  }
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "t:general.announcement_bar",
+  "blocks": [
+    {
+      "type": "message",
+      "name": "t:general.message",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:labels.text",
+          "default": "Envíos a todo Colombia"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:general.announcement_bar",
+      "blocks": [
+        {
+          "type": "message",
+          "settings": {
+            "text": "Envíos a todo Colombia"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,89 @@
+{
+  "general": {
+    "404": "No encontrado",
+    "announcement_bar": "Barra de anuncios",
+    "article": "Artículo",
+    "block": "Bloque",
+    "blog": "Blog",
+    "cart": "Carrito",
+    "collection": "Colección",
+    "collections": "Colecciones",
+    "collection_card": "Tarjeta de colección",
+    "collections_grid": "Cuadrícula de colecciones",
+    "colors": "Colores",
+    "column": "Columna",
+    "content": "Contenido",
+    "custom_section": "Sección personalizada",
+    "fonts": "Fuentes",
+    "footer": "Pie de página",
+    "group": "Grupo",
+    "header": "Encabezado",
+    "hero": "Hero",
+    "layout": "Diseño",
+    "main": "Principal",
+    "message": "Mensaje",
+    "page": "Página",
+    "password": "Contraseña",
+    "primary": "Principal",
+    "product": "Producto",
+    "row": "Fila",
+    "search": "Buscar",
+    "secondary": "Secundario",
+    "section": "Sección",
+    "settings": "Configuración",
+    "sidebar": "Barra lateral",
+    "symptoms": "Trata los síntomas",
+    "text": "Texto",
+    "theme": "Tema",
+    "typography": "Tipografía"
+  },
+  "labels": {
+    "alignment": "Alineación",
+    "background": "Fondo",
+    "button_label": "Texto del botón",
+    "button_link": "Enlace del botón",
+    "foreground": "Primer plano",
+    "gradient_end": "Color final del degradado",
+    "gradient_start": "Color inicial del degradado",
+    "grid_gap": "Espaciado de la cuadrícula",
+    "grid_item_width": "Ancho del elemento de la cuadrícula",
+    "heading": "Encabezado",
+    "image": "Imagen",
+    "input_corner_radius": "Radio de esquina de los campos",
+    "layout_direction": "Dirección del diseño",
+    "menu": "Menú",
+    "customer_account_menu": "Menú de cuenta de cliente",
+    "padding": "Relleno",
+    "page_margin": "Margen de página",
+    "page_width": "Ancho de página",
+    "rating_text": "Texto de valoración",
+    "show_payment_icons": "Mostrar íconos de pago",
+    "subheading": "Subtítulo",
+    "text_style": "Estilo de texto",
+    "text": "Texto"
+  },
+  "options": {
+    "alignment": {
+      "left": "Izquierda",
+      "center": "Centro",
+      "right": "Derecha"
+    },
+    "direction": {
+      "horizontal": "Horizontal",
+      "vertical": "Vertical"
+    },
+    "page_width": {
+      "narrow": "Angosto",
+      "wide": "Ancho"
+    },
+    "size": {
+      "large": "Grande",
+      "small": "Pequeño"
+    },
+    "text_style": {
+      "title": "Título",
+      "subtitle": "Subtítulo",
+      "normal": "Texto normal"
+    }
+  }
+}

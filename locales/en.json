@@ -1,4 +1,13 @@
 {
+  "general": {
+    "search": "Search",
+    "cart": "Cart",
+    "main_menu": "Main menu"
+  },
+  "accessibility": {
+    "previous": "Previous",
+    "next": "Next"
+  },
   "404": {
     "title": "404",
     "not_found": "Page not found.",

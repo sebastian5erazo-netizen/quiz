@@ -1,6 +1,7 @@
 {
   "general": {
     "404": "Not found",
+    "announcement_bar": "Announcement bar",
     "article": "Article",
     "block": "Block",
     "blog": "Blog",
@@ -17,8 +18,10 @@
     "footer": "Footer",
     "group": "Group",
     "header": "Header",
+    "hero": "Hero",
     "layout": "Layout",
     "main": "Main",
+    "message": "Message",
     "page": "Page",
     "password": "Password",
     "primary": "Primary",
@@ -29,6 +32,7 @@
     "section": "Section",
     "settings": "Settings",
     "sidebar": "Sidebar",
+    "symptoms": "Treat the symptoms",
     "text": "Text",
     "theme": "Theme",
     "typography": "Typography"
@@ -36,9 +40,15 @@
   "labels": {
     "alignment": "Alignment",
     "background": "Background",
+    "button_label": "Button label",
+    "button_link": "Button link",
     "foreground": "Foreground",
+    "gradient_end": "Gradient end color",
+    "gradient_start": "Gradient start color",
     "grid_gap": "Grid spacing",
     "grid_item_width": "Grid item width",
+    "heading": "Heading",
+    "image": "Image",
     "input_corner_radius": "Input corner radius",
     "layout_direction": "Layout direction",
     "menu": "Menu",
@@ -46,7 +56,9 @@
     "padding": "Padding",
     "page_margin": "Page margin",
     "page_width": "Page width",
+    "rating_text": "Rating text",
     "show_payment_icons": "Show payment icons",
+    "subheading": "Subheading",
     "text_style": "Text style",
     "text": "Text"
   },
@@ -72,6 +84,6 @@
       "title": "Title",
       "subtitle": "Subtitle",
       "normal": "Normal text"
-    },
+    }
   }
 }

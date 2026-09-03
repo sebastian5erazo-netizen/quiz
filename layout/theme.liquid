@@ -23,6 +23,10 @@
     {% # Social, title, etc. %}
     {% render 'meta-tags' %}
 
+    {% if request.page_type == 'index' %}
+      {% render 'structured-data' %}
+    {% endif %}
+
     {{ content_for_header }}
   </head>
 

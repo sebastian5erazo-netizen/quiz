@@ -9,12 +9,25 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
-      "settings": {}
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "Menos ca<span class=\"accent\">í</span>da, m<span class=\"accent\">á</span>s densidad",
+        "subheading": "Nunca fue tu culpa, usaste el sistema y producto equivocados",
+        "button_label": "Recuperar mi cabello",
+        "button_link": "/collections/all",
+        "rating_text": "Recomendado por dermatólogos"
+      }
+    },
+    "symptoms": {
+      "type": "symptoms",
+      "settings": {
+        "heading": "Trata los síntomas desde adentro"
+      }
     }
   },
   "order": [
-    "main"
+    "hero",
+    "symptoms"
   ]
 }
